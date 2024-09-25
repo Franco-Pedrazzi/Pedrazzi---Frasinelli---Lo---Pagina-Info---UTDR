@@ -1,0 +1,7 @@
+@font-face {
+  font-family: MonsterFriend;
+    src: local("MonsterFriend2Back"), url("./fonts/MonsterFriend2Back.otf")  format("otf");
+}
+body {
+  font-family: MonsterFriend;
+}
