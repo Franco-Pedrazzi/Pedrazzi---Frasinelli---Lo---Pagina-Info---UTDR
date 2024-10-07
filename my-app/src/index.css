@@ -1,11 +1,41 @@
 @font-face {
-  font-family: Determination;
+  font-family: Determination-Mono;
     src: url("./files/DTM-Mono.otf");
     
 }
+@font-face {
+  font-family: Determination-Sans;
+    src: url("./files/DTM-Sans.otf");
+   
+}
+* { cursor: url("./files/Images/detemination\ soul.png"), default;}
+
+a:hover, button:hover, input:hover { cursor: url("./files/Images/detemination\ soul.png"), pointer;}
+a:active, button:active, input:active { cursor: url("./files/Images/detemination\ soul.png"), grabbing;}
+p:hover, h1:hover, h2:hover, h3:hover, h4:hover, h5:hover, h6:hover { cursor: url("./files/Images/detemination\ soul.png"), text;}
 body {
   margin: 0;
-  font-family: Determination;
+  font-family:  Determination-Mono;
   color: white;
   background-color: black;
+}
+nav{
+display:flex;
+justify-content: space-around
+}
+.button{
+  position: relative;
+  padding: 5px;
+  max-width: 10%;
+  max-height: 5%;
+  min-width: 70px;
+  font-family: Determination-Sans;
+  border: 5px solid transparent;
+  border-color: rgb(255, 187, 0);
+  color: rgb(255, 187, 0);
+  background-color: black;
+}
+.button:hover {
+  border-color: rgb(255, 255, 0);
+  color: rgb(255, 255, 0);
 }
