@@ -1,7 +1,11 @@
 @font-face {
-  font-family: MonsterFriend;
-    src: local("MonsterFriend2Back"), url("./fonts/MonsterFriend2Back.otf")  format("otf");
+  font-family: Determination;
+    src: url("./files/DTM-Mono.otf");
+    
 }
 body {
-  font-family: MonsterFriend;
+  margin: 0;
+  font-family: Determination;
+  color: white;
+  background-color: black;
 }

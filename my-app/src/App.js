@@ -1,14 +1,13 @@
-import { useState, useEffect } from 'react'
-import './index.css';
-function App() {
-  const [Info, SetInfo] = useState([])
+import React from 'react';
+import './index.css'; // Import the CSS file with the @font-face rule
+import titulo from './files/Images/Titulo.png'
+const App = () => {
   return (
-    <div style={{ textAlign: "center" }}>
-      <h1>Undertale</h1>
-      <h1>&</h1>
-      <h1>Deltarune</h1>
+    <div style={{textAlign:'center'}}>
+      <img src={titulo}></img>
+      <p>by toby fox</p>
     </div>
   );
-}
+};
 
-export default App;
+export default App;        
