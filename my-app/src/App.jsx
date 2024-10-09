@@ -20,24 +20,19 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app); // Inicializa Firestore
 
-const App = () => {
+function App () {
   const [docData, setDocData] = useState(null);
 
-  useEffect(() => {
-    // Función asíncrona para obtener los datos de Firestore
-    const fetchData = async () => {
-      const docRef = doc(db, "Annoying dog", "TB"); // Ruta a la colección y documento
-      const docSnap = await getDoc(docRef);
+  useEffect(async () => {
+    const docRef = doc(db, "Annoying dog", "TB"); // Ruta a la colección y documento
+    const docSnap = await getDoc(docRef);
 
-      if (docSnap.exists()) {
-        setDocData(docSnap.data()); // Almacena los datos en el estado
-        console.log("Document data:", docSnap.data()); // Verifica los datos en consola
-      } else {
-        console.log("No such document!");
-      }
-    };
-
-    fetchData();
+    if (docSnap.exists()) {
+      setDocData(docSnap.data()); // Almacena los datos en el estado
+      console.log("Document data:", docSnap.data()); // Verifica los datos en consola
+    } else {
+      console.log("No such document!");
+    }
   }, []);
 
   return (
@@ -49,14 +44,14 @@ const App = () => {
       <center>
         <img src={titulo} alt="Titulo" />
         <p>by toby fox</p>
-        {docData ? (
+        {/* {docData ? (
           <div>
             <p>Be careful: {docData["Be careful"]}</p>
             <p>OMG: {docData.OMG}</p>
           </div>
         ) : (
           <p>Loading data...</p>
-        )}
+        )} */}
       </center>
     </div>
   );
