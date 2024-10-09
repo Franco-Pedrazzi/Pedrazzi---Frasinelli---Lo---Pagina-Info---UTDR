@@ -1,22 +1,65 @@
-import React from 'react';
-import './index.css'; // Import the CSS file with the @font-face rule
-import titulo from './files/Images/Titulo.png'
+import React, { useState, useEffect } from 'react';
+import './index.css';
+import titulo from './files/Images/Titulo.png';
+import { initializeApp } from "firebase/app";
+import { getFirestore, doc, getDoc } from "firebase/firestore"; // Importa Firestore
+
+// Firebase config
+const firebaseConfig = {
+  apiKey: "AIzaSyCYtBDunaKO3hcWAntdmRty8N3dFGKvhVA",
+  authDomain: "usuarios-ff69d.firebaseapp.com",
+  databaseURL: "https://usuarios-ff69d-default-rtdb.firebaseio.com",
+  projectId: "usuarios-ff69d",
+  storageBucket: "usuarios-ff69d.appspot.com",
+  messagingSenderId: "63150293141",
+  appId: "1:63150293141:web:33f299369773f46eef9b9c",
+  measurementId: "G-7MVQ1N4MZ6"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app); // Inicializa Firestore
+
 const App = () => {
-  //<iframe src="https://jcw87.github.io/c2-sans-fight/" name="Game Name" width="800" height="480" frameborder="0" scrolling="no" ><p>Your browser does not support iframes.</p></iframe>
+  const [docData, setDocData] = useState(null);
+
+  useEffect(() => {
+    // Función asíncrona para obtener los datos de Firestore
+    const fetchData = async () => {
+      const docRef = doc(db, "Annoying dog", "TB"); // Ruta a la colección y documento
+      const docSnap = await getDoc(docRef);
+
+      if (docSnap.exists()) {
+        setDocData(docSnap.data()); // Almacena los datos en el estado
+        console.log("Document data:", docSnap.data()); // Verifica los datos en consola
+      } else {
+        console.log("No such document!");
+      }
+    };
+
+    fetchData();
+  }, []);
+
   return (
     <div>
       <nav>
-        <div className='button'>Undertale </div>
-        <div className='button'>Deltarune </div>
+        <div className='button'>Undertale</div>
+        <div className='button'>Deltarune</div>
       </nav>
       <center>
-      <img src={titulo}></img>
-      <p>by toby fox</p>
-
+        <img src={titulo} alt="Titulo" />
+        <p>by toby fox</p>
+        {docData ? (
+          <div>
+            <p>Be careful: {docData["Be careful"]}</p>
+            <p>OMG: {docData.OMG}</p>
+          </div>
+        ) : (
+          <p>Loading data...</p>
+        )}
       </center>
-      
-      </div> 
+    </div>
   );
 };
 
-export default App;        
+export default App;
