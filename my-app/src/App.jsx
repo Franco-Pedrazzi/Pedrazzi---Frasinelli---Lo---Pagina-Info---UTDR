@@ -3,7 +3,9 @@ import './index.css';
 import titulo from './files/Images/Titulo.png';
 import { initializeApp } from "firebase/app";
 import { getFirestore, doc, getDoc } from "firebase/firestore"; // Importa Firestore
-
+import deltarune_logo from './files/Images/Deltarune-logo.png'
+import deltarune_logo_bg from './files/Images/Deltarune-logo-background.png'
+import Undertale_logo from './files/Images/Undertale-logo.png'
 // Firebase config
 const firebaseConfig = {
   apiKey: "AIzaSyCYtBDunaKO3hcWAntdmRty8N3dFGKvhVA",
@@ -38,20 +40,20 @@ function App () {
   return (
     <div>
       <nav>
-        <div className='button'>Undertale</div>
-        <div className='button'>Deltarune</div>
+      <div className='Especial_button' style={{display:"flex", paddingRight: "45px"}}><img src={Undertale_logo} className='button-img'></img><p className='button_text'>Undertale</p></div>
+        <div className='Especial_button' style={{display:"flex"}}><img src={deltarune_logo_bg}></img><img src={deltarune_logo} className='button-img' style={{position:"relative",left:"-31%"}}></img><p className='button_text'  style={{position:"relative",left:"-15%"}}>Deltarune</p></div>
       </nav>
       <center>
         <img src={titulo} alt="Titulo" />
         <p>by toby fox</p>
-        {/* {docData ? (
+        {docData ? (
           <div>
             <p>Be careful: {docData["Be careful"]}</p>
             <p>OMG: {docData.OMG}</p>
           </div>
         ) : (
           <p>Loading data...</p>
-        )} */}
+        )}
       </center>
     </div>
   );
