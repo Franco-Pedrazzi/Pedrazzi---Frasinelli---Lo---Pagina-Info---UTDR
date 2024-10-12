@@ -35,7 +35,7 @@ function App () {
       <center>
       <div className='content'> 
     
-        <img src={titulo} alt="Titulo" />
+        <img src={titulo} alt="Titulo" className='titulo'  />
         <p>by toby fox</p>
         {docData ? (
           <div>

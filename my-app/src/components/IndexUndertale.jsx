@@ -31,18 +31,18 @@ function IndexUndertale () {
       <nav>
         <a href='http://localhost:3000' className='Especial_button' style={{display:"flex", paddingRight: "45px"}}>
         <img src={Annoying_dog_bg} alt="Annoying_dog_bg" />
-        <img src={Annoying_dog} className='button-img' style={{position:"relative",left:"-31%"}} />
+        <img src={Annoying_dog} className='button-img' style={{position:"relative",left:"-33%"}} />
           <p className='button_text'  style={{position:"relative",left:"-15%"}}>Inicio</p>
         </a>
         <div className='Especial_button' style={{display:"flex"}}>
           <img src={deltarune_logo_bg} alt="Deltarune logo background" />
-          <img src={deltarune_logo} className='button-img' style={{position:"relative",left:"-25%"}} />
+          <img src={deltarune_logo} className='button-img' style={{position:"relative",left:"-29%"}} />
           <p className='button_text'  style={{position:"relative",left:"-15%"}}>Deltarune</p>
         </div>
       </nav>
       <center>
         <div className='content'> 
-          <img src={titulo} alt="Titulo" />
+          <img src={titulo} alt="Titulo" className='titulo' />
           <p>by Toby Fox</p>
           {docData ? (
             <div>
