@@ -1,47 +1,42 @@
 import React, { useState, useEffect } from 'react';
 import '../index.css';
-import titulo from '../files/Images/Titulo.png';
+import titulo from '../files/Images/Undertale titulo.png';
 import deltarune_logo from '../files/Images/Deltarune-logo.png';
 import deltarune_logo_bg from '../files/Images/Deltarune-logo-background.png';
-import Undertale_logo from '../files/Images/Undertale-logo.png';
+import Annoying_dog_bg from '../files/Images/Annoying dog fondo.png';
+import Annoying_dog from '../files/Images/Annoying dog.png';
 import loading from '../files/Images/Annoying_Dog_overworld_sleeping.webp';
-import { db } from '../DataBase'; // Importa tu instancia de Firestore
-import { doc, getDoc } from "firebase/firestore"; // Importa las funciones necesarias de Firestore
+import { db } from '../DataBase'; 
+import { doc, getDoc } from "firebase/firestore"; 
 
 function IndexUndertale () {
   const [docData, setDocData] = useState(null);
 
-  // Utiliza useEffect para cargar los datos solo cuando el componente se monta
-  useEffect(() => {
-    const fetchData = async () => {
+  useEffect(async () => {
       try {
-        // Suponiendo que estás obteniendo un documento específico de Firestore
-        const docRef = doc(db, 'Annoying dog', 'TB'); // Cambia estos nombres según tu colección y documento
+        const docRef = doc(db, 'Undertale', 'UT'); 
         const docSnap = await getDoc(docRef);
-        
         if (docSnap.exists()) {
-          setDocData(docSnap.data()); // Establece los datos del documento
+          setDocData(docSnap.data());
         } else {
           console.log("No se encontró el documento");
         }
       } catch (error) {
         console.error("Error al obtener el documento:", error);
       }
-    };
-
-    fetchData(); // Llama a la función para obtener los datos
-  }, []); // El arreglo vacío asegura que solo se ejecute una vez cuando el componente se monta
+  }, []); 
 
   return (
     <div>
       <nav>
-        <a href='http://localhost:3000/Undertale' className='Especial_button' style={{display:"flex", paddingRight: "45px"}}>
-          <img src={Undertale_logo} className='button-img' alt="Undertale logo" />
-          <p className='button_text'>Undertale</p>
+        <a href='http://localhost:3000' className='Especial_button' style={{display:"flex", paddingRight: "45px"}}>
+        <img src={Annoying_dog_bg} alt="Annoying_dog_bg" />
+        <img src={Annoying_dog} className='button-img' style={{position:"relative",left:"-31%"}} />
+          <p className='button_text'  style={{position:"relative",left:"-15%"}}>Inicio</p>
         </a>
         <div className='Especial_button' style={{display:"flex"}}>
           <img src={deltarune_logo_bg} alt="Deltarune logo background" />
-          <img src={deltarune_logo} className='button-img' style={{position:"relative",left:"-31%"}} alt="Deltarune logo" />
+          <img src={deltarune_logo} className='button-img' style={{position:"relative",left:"-25%"}} />
           <p className='button_text'  style={{position:"relative",left:"-15%"}}>Deltarune</p>
         </div>
       </nav>
@@ -51,8 +46,7 @@ function IndexUndertale () {
           <p>by Toby Fox</p>
           {docData ? (
             <div>
-              <p>Be careful: {docData["Be careful"]}</p>
-              <p>OMG: {docData.OMG}</p>
+              <p>{docData["Introducción"]}</p>
             </div>
           ) : (
             <img src={loading} alt="Loading..." />

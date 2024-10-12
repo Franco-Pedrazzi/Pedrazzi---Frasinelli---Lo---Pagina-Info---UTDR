@@ -8,29 +8,24 @@ import deltarune_logo_bg from './files/Images/Deltarune-logo-background.png'
 import Undertale_logo from './files/Images/Undertale-logo.png'
 import loading from './files/Images/Annoying_Dog_overworld_sleeping.webp'
 import { db } from './DataBase';
-// Firebase confi
+
 function App () {
   const [docData, setDocData] = useState(null);
-  
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        // Suponiendo que estás obteniendo un documento específico de Firestore
-        const docRef = doc(db, 'Annoying dog', 'TB');  // Cambia estos nombres según tu colección y documento
-        const docSnap = await getDoc(docRef);
-        
-        if (docSnap.exists()) {
-          setDocData(docSnap.data()); // Establece los datos del documento
-        } else {
-          console.log("No se encontró el documento");
-        }
-      } catch (error) {
-        console.error("Error al obtener el documento:", error);
-      }
-    };
 
-    fetchData(); // Llama a la función para obtener los datos
-  }, []); // El arreglo vacío asegura que solo se ejecute una vez cuando el componente se monta
+  useEffect(async () => {
+    try {
+      const docRef = doc(db, 'Annoying dog', 'TB'); 
+      const docSnap = await getDoc(docRef);
+      if (docSnap.exists()) {
+        setDocData(docSnap.data());
+      } else {
+        console.log("No se encontró el documento");
+      }
+    } catch (error) {
+      console.error("Error al obtener el documento:", error);
+    }
+}, []); 
+
   return (
     <div>
       <nav>
