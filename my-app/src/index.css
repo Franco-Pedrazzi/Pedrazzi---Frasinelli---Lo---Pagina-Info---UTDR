@@ -8,11 +8,17 @@
     src: url("./files/DTM-Sans.otf");
    
 }
-* { cursor: url("./files/Images/detemination\ soul.png"), default;}
-
+* { 
+  cursor: url("./files/Images/detemination\ soul.png"), default;
+}
+p{
+ max-width: max-content;
+}
 a:hover, button:hover, input:hover,.Especial_button:hover, .button_text:hover , .button-img:hover{ cursor: url("./files/Images/detemination\ soul\ alert.png"), pointer;}
 p:hover, h1:hover, h2:hover, h3:hover, h4:hover, h5:hover, h6:hover { cursor: url("./files/Images/amability\ soul.png"), text;}
+
 body {
+  position: relative;
   margin: 0;
   font-family:  Determination-Mono;
   color: white;
