@@ -9,22 +9,28 @@ import loading from '../files/Images/Annoying_Dog_overworld_sleeping.webp';
 import { db } from '../DataBase'; 
 import { doc, getDoc } from "firebase/firestore"; 
 import intro from '../files/Images/undertale_intro.mp4'
+import quit from '../files/Images/Quit.png'
+
 function IndexUndertale () {
   const [docData, setDocData] = useState(null);
   const [introduccion, setIntroduccion] = useState(false);
-  useEffect(async () => {
-      try {
-        const docRef = doc(db, 'Undertale', 'UT'); 
-        const docSnap = await getDoc(docRef);
-        if (docSnap.exists()) {
-          setDocData(docSnap.data());
-        } else {
-          console.log("No se encontró el documento");
-        }
-      } catch (error) {
-        console.error("Error al obtener el documento:", error);
+  useEffect(() => {
+    async function fetchData() {
+    try {
+      const docRef = doc(db, 'Undertale', 'UT'); 
+      const docSnap = await getDoc(docRef);
+      if (docSnap.exists()) {
+        setDocData(docSnap.data());
+      } else {
+        console.log("No se encontró el documento");
       }
-  }, []); 
+    } catch (error) {
+     
+      console.error("Error al obtener el documento:", error);
+    }
+    }
+    fetchData() 
+}, []); 
 
   return (
     <div>
@@ -51,8 +57,8 @@ function IndexUndertale () {
             </div>
           ) : (
             <div>
-              <video  onEnded={()=>setIntroduccion(true)} autoPlay  style={{maxWidth:"50%",maxHeight:"30%"}} src={intro}></video>
-              <button onClick={()=>setIntroduccion(true)}>Skip</button>
+              <video  onEnded={()=>setIntroduccion(true)} autoPlay  style={{maxWidth:"50%",maxHeight:"30%",minWidth:"50%",miHeight:"30%"}} src={intro}></video>
+              <div onClick={()=>setIntroduccion(true)} ><img  className='button' src={quit}></img></div>
             </div>
 
           )}

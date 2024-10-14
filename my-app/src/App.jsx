@@ -8,11 +8,13 @@ import deltarune_logo_bg from './files/Images/Deltarune-logo-background.png'
 import Undertale_logo from './files/Images/Undertale-logo.png'
 import loading from './files/Images/Annoying_Dog_overworld_sleeping.webp'
 import { db } from './DataBase';
-
+import { Link } from "react-router-dom";
+import IndexUndertale from './components/IndexUndertale.jsx'
 function App () {
   const [docData, setDocData] = useState(null);
 
-  useEffect(async () => {
+  useEffect(() => {
+    async function fetchData() {
     try {
       const docRef = doc(db, 'Annoying dog', 'TB'); 
       const docSnap = await getDoc(docRef);
@@ -22,18 +24,21 @@ function App () {
         console.log("No se encontró el documento");
       }
     } catch (error) {
+     
       console.error("Error al obtener el documento:", error);
     }
+    }
+    fetchData() 
 }, []); 
 
   return (
     <div>
       <nav>
 
-      <a href='http://localhost:3000/Undertale' className='Especial_button' style={{display:"flex", paddingRight: "45px"}}>
+      <Link to='http://localhost:3000/Undertale' className='Especial_button' style={{display:"flex", paddingRight: "45px"}}>
       <img src={Undertale_logo} className='button-img'></img>
       <p className='button_text'>Undertale</p>
-      </a>
+      </Link>
 
         <div className='Especial_button' style={{display:"flex"}}>
           <img src={deltarune_logo_bg} className='icon_bg'></img>

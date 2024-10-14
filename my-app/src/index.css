@@ -19,7 +19,7 @@ p,h3{
 h3{
   font-size: 25px;
 }
-a:hover, button:hover, input:hover,.Especial_button:hover, .button_text:hover , .button-img:hover{ cursor: url("./files/Images/detemination\ soul\ alert.png"), pointer;}
+a:hover, button:hover, input:hover,.Especial_button:hover, .button_text:hover , .button-img:hover, .button:hover{ cursor: url("./files/Images/detemination\ soul\ alert.png"), pointer;}
 p:hover, h1:hover, h2:hover, h3:hover, h4:hover, h5:hover, h6:hover { cursor: url("./files/Images/amability\ soul.png"), text;}
 .titulo{
   max-width: 75%;
@@ -71,4 +71,11 @@ justify-content: space-around
 }
 .Especial_button:hover .icon_bg{
   filter:blur();
+ }
+ .button:hover{
+  filter: brightness(0) saturate(100%) invert(88%) sepia(70%) saturate(4038%) hue-rotate(4deg) brightness(108%) contrast(101%);
+ }
+ .button{
+width: 5%;
+height: 5%;
  }
