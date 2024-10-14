@@ -8,10 +8,10 @@ import Annoying_dog from '../files/Images/Annoying dog.png';
 import loading from '../files/Images/Annoying_Dog_overworld_sleeping.webp';
 import { db } from '../DataBase'; 
 import { doc, getDoc } from "firebase/firestore"; 
-
+import intro from '../files/Images/undertale_intro.mp4'
 function IndexUndertale () {
   const [docData, setDocData] = useState(null);
-
+  const [introduccion, setIntroduccion] = useState(false);
   useEffect(async () => {
       try {
         const docRef = doc(db, 'Undertale', 'UT'); 
@@ -30,26 +30,41 @@ function IndexUndertale () {
     <div>
       <nav>
         <a href='http://localhost:3000' className='Especial_button' style={{display:"flex", paddingRight: "45px"}}>
-        <img src={Annoying_dog_bg} alt="Annoying_dog_bg" />
+        <img src={Annoying_dog_bg} alt="Annoying_dog_bg" className='icon_bg' />
         <img src={Annoying_dog} className='button-img' style={{position:"relative",left:"-33%"}} />
           <p className='button_text'  style={{position:"relative",left:"-15%"}}>Inicio</p>
         </a>
         <div className='Especial_button' style={{display:"flex"}}>
-          <img src={deltarune_logo_bg} alt="Deltarune logo background" />
+          <img src={deltarune_logo_bg} alt="Deltarune logo background" className='icon_bg' />
           <img src={deltarune_logo} className='button-img' style={{position:"relative",left:"-29%"}} />
           <p className='button_text'  style={{position:"relative",left:"-15%"}}>Deltarune</p>
         </div>
       </nav>
       <center>
         <div className='content'> 
-          <img src={titulo} alt="Titulo" className='titulo' />
-          <p>by Toby Fox</p>
-          {docData ? (
+         
+          <br />
+          {introduccion? (
             <div>
-              <p>{docData["Introducción"]}</p>
+              <img src={titulo} alt="Titulo" className='titulo' />
+              <p>by Toby Fox</p>
             </div>
           ) : (
-            <img src={loading} alt="Loading..." />
+            <div>
+              <video  onEnded={()=>setIntroduccion(true)} autoPlay  style={{maxWidth:"50%",maxHeight:"30%"}} src={intro}></video>
+              <button onClick={()=>setIntroduccion(true)}>Skip</button>
+            </div>
+
+          )}
+          {docData? (
+            <div>
+              {introduccion &&  <h3>{docData["Introducción"]}</h3> }
+              
+            </div>
+          ) : (
+            <div>
+                 {introduccion &&  <img src={loading} alt="Loading..." />}
+            </div>
           )}
         </div>
       </center>

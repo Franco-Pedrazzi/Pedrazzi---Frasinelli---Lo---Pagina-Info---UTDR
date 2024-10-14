@@ -29,8 +29,17 @@ function App () {
   return (
     <div>
       <nav>
-      <a href='http://localhost:3000/Undertale' className='Especial_button' style={{display:"flex", paddingRight: "45px"}}><img src={Undertale_logo} className='button-img'></img><p className='button_text'>Undertale</p></a>
-        <div className='Especial_button' style={{display:"flex"}}><img src={deltarune_logo_bg}></img><img src={deltarune_logo} className='button-img' style={{position:"relative",left:"-31%"}}></img><p className='button_text'  style={{position:"relative",left:"-15%"}}>Deltarune</p></div>
+
+      <a href='http://localhost:3000/Undertale' className='Especial_button' style={{display:"flex", paddingRight: "45px"}}>
+      <img src={Undertale_logo} className='button-img'></img>
+      <p className='button_text'>Undertale</p>
+      </a>
+
+        <div className='Especial_button' style={{display:"flex"}}>
+          <img src={deltarune_logo_bg} className='icon_bg'></img>
+          <img src={deltarune_logo} className='button-img' style={{position:"relative",left:"-31%"}}></img>
+          <p className='button_text'  style={{position:"relative",left:"-15%"}}>Deltarune</p>
+          </div>
       </nav>
       <center>
       <div className='content'> 
@@ -39,8 +48,8 @@ function App () {
         <p>by toby fox</p>
         {docData ? (
           <div>
-            <p>Be careful: {docData["Be careful"]}</p>
-            <p>OMG: {docData.OMG}</p>
+            <h3>Be careful: {docData["Be careful"]}</h3>
+            <h3>OMG: {docData.OMG}</h3>
           </div>
         ) : (
           <img src={loading}></img>
