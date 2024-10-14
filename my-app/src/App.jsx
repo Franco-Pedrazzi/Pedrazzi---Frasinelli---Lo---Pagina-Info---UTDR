@@ -40,11 +40,11 @@ function App () {
       <p className='button_text'>Undertale</p>
       </Link>
 
-        <div className='Especial_button' style={{display:"flex"}}>
+      <Link to='http://localhost:3000/Deltarune' className='Especial_button' style={{display:"flex"}}>
           <img src={deltarune_logo_bg} className='icon_bg'></img>
           <img src={deltarune_logo} className='button-img' style={{position:"relative",left:"-31%"}}></img>
           <p className='button_text'  style={{position:"relative",left:"-15%"}}>Deltarune</p>
-          </div>
+      </Link>
       </nav>
       <center>
       <div className='content'> 
