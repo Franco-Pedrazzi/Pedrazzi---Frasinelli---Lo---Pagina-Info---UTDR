@@ -4,18 +4,18 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { createRoot } from "react-dom/client";
-import { BrowserRouter,Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import IndexUndertale from './components/IndexUndertale.jsx'
 import IndexDeltarune from './components/IndexDeltarune.jsx'
 const root = createRoot(document.getElementById("root"));
 root.render(
-<BrowserRouter>
-<Routes>
-<Route path="/" element={<App />} />
-<Route path="/Undertale" element={<IndexUndertale />} />
-<Route path="/Deltarune" element={<IndexDeltarune />} />
-</Routes>
-</BrowserRouter>
+    <BrowserRouter>
+        <Routes>
+            <Route path="/" element={<App />} />
+            <Route path="/Undertale" element={<IndexUndertale />} />
+            <Route path="/Deltarune" element={<IndexDeltarune />} />
+        </Routes>
+    </BrowserRouter>
 );
 
 // If you want to start measuring performance in your app, pass a function
