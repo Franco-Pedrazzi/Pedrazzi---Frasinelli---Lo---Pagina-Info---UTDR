@@ -1,13 +1,29 @@
 @font-face {
   font-family: Determination-Mono;
   src: url("./files/DTM-Mono.otf");
-
 }
 
 @font-face {
   font-family: Determination-Sans;
   src: url("./files/DTM-Sans.otf");
+}
 
+@font-face {
+  font-family: '8 Bit Operator';
+  src: url('../src/files/8bitoperatorplus-regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-size: 150%;
+}
+
+@font-face {
+  font-family: 8-Bit-Operator-Jve;
+  src: url("./files/8bitoperator_jve.ttf");
+}
+
+@font-face {
+  font-family: Deltarune;
+  src: url("./files/Deltarune.ttf");
 }
 
 * {
@@ -18,7 +34,6 @@ p,
 h3 {
   max-width: 75%;
   min-width: min-content;
-
 }
 
 h3 {
@@ -116,7 +131,21 @@ nav {
 
 /*Css exclusivo de Deltarune*/
 
-#deltarune{
-  background-color: red !important;
-  background-size:cover;
+#deltarune {
+  background-image: url("../src/files/Images/DRbg.gif");
+  background-size: 50% !important;
+  background-position: right top;
+  background-repeat: repeat;
+  background-size: cover;
+}
+
+#deltarune section{
+  background-color: black !important;
+  border: 4px solid rgb(0, 192, 0);
+  max-width: 400px;
+}
+
+#deltarune section p{
+  font-family: '8 Bit Operator';
+  text-shadow: 2px 2px #0f0f71;
 }
