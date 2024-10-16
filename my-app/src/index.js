@@ -5,8 +5,9 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { createRoot } from "react-dom/client";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import IndexUndertale from './components/IndexUndertale.jsx'
-import IndexDeltarune from './components/IndexDeltarune.jsx'
+import IndexUndertale from './components/IndexUndertale.jsx';
+import IndexDeltarune from './components/IndexDeltarune.jsx';
+import Footer from './components/Footer.jsx';
 const root = createRoot(document.getElementById("root"));
 root.render(
     <BrowserRouter>
@@ -15,6 +16,7 @@ root.render(
             <Route path="/Undertale" element={<IndexUndertale />} />
             <Route path="/Deltarune" element={<IndexDeltarune />} />
         </Routes>
+    <Footer />
     </BrowserRouter>
 );
 
