@@ -30,7 +30,18 @@ function IndexUndertale() {
           <img src={deltarune_logo} className='button-img' style={{ position: "relative", left: "-29%" }} />
           <p className='button_text' style={{ position: "relative", left: "-15%" }}>Deltarune</p>
         </Link>
+        
       </nav>
+      <nav><Link to='http://localhost:3000' className='Especial_button' style={{ display: "flex", paddingRight: "45px" }}>
+          <img src={Annoying_dog_bg} alt="Annoying_dog_bg" className='icon_bg' />
+          <img src={Annoying_dog} className='button-img' style={{ position: "relative", left: "-33%" }} />
+          <p className='button_text' style={{ position: "relative", left: "-15%" }}>Personages</p>
+        </Link>
+        <Link to="http://localhost:3000/Deltarune" className='Especial_button' style={{ display: "flex" }}>
+          <img src={deltarune_logo_bg} alt="Deltarune logo background" className='icon_bg' />
+          <img src={deltarune_logo} className='button-img' style={{ position: "relative", left: "-29%" }} />
+          <p className='button_text' style={{ position: "relative", left: "-15%" }}>Deltarune</p>
+        </Link></nav>
       <center>
         <div className='content'>
 
@@ -60,7 +71,7 @@ function IndexUndertale() {
               <h3>En Undertale existe el Alma que es la culminación de cada ser, el Alma se hace más fuerte con <genocida>LOVE</genocida>(LV) y aumenta con una determinada cantidad de <genocida>EXP</genocida>.              </h3>
               <h3>¿Qué significa  <genocida>LOVE</genocida>? podrías pensar que significa amor en ingles pero no, es un acrónimo de <genocida>Level of Violence</genocida> (Nivel de Violencia), ¿y <genocida>EXP</genocida>? es otro acrónimo de <genocida>Execution Points</genocida> (Puntos de Exterminio) y se van ganando mientras vas matando Monstruos </h3>
 
-              <h3>Los humanos pueden tener hasta 7 diferentes tipos de Almas</h3>
+              <h3>Los humanos pueden tener hasta 7 diferentes tipos de Almas y cada una de estas tienen sus propias caracteristicas</h3>
               <div className='almas'>
                 <paciencia><img src={Determination_soul} /> Paciencia</paciencia>
                 <br />
@@ -77,15 +88,15 @@ function IndexUndertale() {
                 <determinacion><img src={Determination_soul} /> Determinación</determinacion>(la de nuestro protagonista)
               </div>
               <h1>Los Monstruos</h1>
-              <h3>Los monstruos a diferencia de los humanos su cuerpo está hecho con magia, haciendo de que ellos puedan hacer poderosos ataques mágicos pero aun asi los humanos son más poderosos, ya que los cuerpos de los monstruos y sus Almas son más débiles que las de un humano, tan haci que cuando mueren su cuerpo se hace polvo y se alma pedazos, todos los monstruos a excepción de uno su Rey <determinacion>Asgore</determinacion> ya que su alma aunque él muera se mantendrá intacta.
+              <h3>Los monstruos a diferencia de los humanos su cuerpo está hecho con magia, haciendo de que ellos puedan hacer poderosos ataques mágicos pero aun asi los humanos son más poderosos, ya que los cuerpos de los monstruos y sus Almas son más débiles que las de un humano, tan haci que cuando mueren su cuerpo se hace polvo y se alma pedazos, todos los monstruos a excepción de uno su Rey <genocida>Asgore</genocida> ya que su alma aunque él muera se mantendrá intacta.
               <h3>asi se ve el alma de los monstruos</h3>
               <img style={{width:"20%",height:"20%"}}src={monster_soul}></img>
               </h3>
               <br />
 <h2>¿Por qué los humanos encerraron a los monstruos en el Underground si eran más débiles que ellos?</h2>
            <h3>
-Eso Tiene una simple respuesta <genocida>MIEDO</genocida> por que cuando un Humano muere su alma se mantiene y los monstruos puede absorber y hacerse mas poderosos de tal modo que con 7 se vuelven <genocida>DIOSES</genocida>
-</h3>
+Eso Tiene una simple respuesta <genocida>MIEDO</genocida> por que cuando un Humano muere su alma se mantiene y los monstruos puede absorber y hacerse mas poderosos de tal modo que con 7 se vuelven <genocida>DIOSES</genocida>. <genocida>Asgore</genocida> ya tienen 6 y buscan la séptima para poder destruir la barrera que los mantiene encerrados y declararle la guerra a los humanos.</h3>
+
             </div>
           ) : (
             <div>
