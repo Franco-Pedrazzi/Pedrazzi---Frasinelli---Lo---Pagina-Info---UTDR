@@ -39,6 +39,10 @@
   cursor: url("./files/Images/detemination\ soul.png"), default;
 }
 
+img {
+  image-rendering: pixelated;
+}
+
 determinacion,
 genocida {
   filter: brightness(0) saturate(100%) invert(18%) sepia(74%) saturate(5172%) hue-rotate(342deg) brightness(77%) contrast(117%);
@@ -93,14 +97,21 @@ h2 {
   font-size: 200%;
 }
 
+a,
+Link {
+  color: inherit;
+  text-decoration: none;
+}
+
 a:hover,
 button:hover,
 input:hover,
+Link:hover,
 .Especial_button:hover,
 .button_text:hover,
 .button-img:hover,
 .button:hover {
-  color: #ffff00;
+  color: #ffff00 !important;
   cursor: url("./files/Images/detemination\ soul\ alert.png"), pointer;
 }
 
@@ -245,10 +256,4 @@ dr-background {
   font-family: "8bitoperator JVE";
   color: #ffff00;
   font-weight: normal;
-}
-
-#deltarune img {
-  image-rendering: pixelated;
-  margin: 5px;
-  width: 500px;
 }

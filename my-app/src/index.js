@@ -13,10 +13,37 @@ root.render(
     <BrowserRouter>
         <Routes>
             <Route path="/" element={<App />} />
+
+            {/* Hay que importar "UseParams" de "react-router-dom" en la componente que llamas con un vinculo adaptable 
+            (las que tienen 2 puntos al inicio) para que te devuelva el link ingresado 
+            import * as React from 'react';
+            import { Routes, Route, useParams } from 'react-router-dom';
+
+            function ProfilePage() {
+            // Get the userId param from the URL.
+            let { userId } = useParams();
+            // ...
+            }
+
+            function App() {
+            return (
+                <Routes>
+                <Route path="users">
+                    <Route path="me" element={...} />
+                    <Route path=":userId" element={<ProfilePage />} />
+                </Route>
+                </Routes>
+            );
+            } */}
             <Route path="/Undertale" element={<IndexUndertale />} />
+            <Route path="/Undertale/:categoria" element={<IndexUndertale />} />
+            <Route path="/Undertale/:categoria/:articulo" element={<IndexUndertale />} />
+
             <Route path="/Deltarune" element={<IndexDeltarune />} />
+            <Route path="/Deltarune/:categoria" element={<IndexDeltarune />} />
+            <Route path="/Deltarune/:categoria/:articulo" element={<IndexDeltarune />} />
         </Routes>
-    <Footer />
+        <Footer />
     </BrowserRouter>
 );
 

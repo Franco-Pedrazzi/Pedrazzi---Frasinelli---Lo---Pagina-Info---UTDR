@@ -14,47 +14,49 @@ import undertaleBTN2 from "../files/Images/undertaleBTN2.png"
 function IndexDeltarune() {
 
   const [chapters, setChapters] = useState([
-    { index: 1, name: "Personajes", image: ChapterIcon }
+    { index: 1, name: "Personajes", image: ChapterIcon },
+    { index: 2, name: "Personajes", image: ChapterIcon },
+    { index: 3, name: "Personajes", image: ChapterIcon }
   ]);
 
   return (
     <body id="deltarune" style={{ background: "transparent" }}>
 
-      <section id="buttons" style={{  }}>
+      <div id="buttons" style={{ position: "fixed", zIndex: "10000", margin: "-10px" }}>
         <ul style={{ listStyleType: "none" }}>
           <li>
             <Link to="http://localhost:3000">
-            <img 
-              src={MainBTN}
-              style={{width:"60px"}}
-              onMouseEnter={(e) => { e.currentTarget.src = MainBTN2 }}
-              onMouseLeave={(e) => { e.currentTarget.src = MainBTN }}
-            />
+              <img
+                src={MainBTN}
+                style={{ width: "60px" }}
+                onMouseEnter={(e) => { e.currentTarget.src = MainBTN2 }}
+                onMouseLeave={(e) => { e.currentTarget.src = MainBTN }}
+              />
             </Link>
           </li>
           <li>
             <Link to="http://localhost:3000/Deltarune">
-            <img
-              src={deltaruneBTN}
-              style={{width:"60px"}}
-              onMouseEnter={(e) => { e.currentTarget.src = deltaruneBTN2 }}
-              onMouseLeave={(e) => { e.currentTarget.src = deltaruneBTN }}
-            />
+              <img
+                src={deltaruneBTN}
+                style={{ width: "60px" }}
+                onMouseEnter={(e) => { e.currentTarget.src = deltaruneBTN2 }}
+                onMouseLeave={(e) => { e.currentTarget.src = deltaruneBTN }}
+              />
             </Link>
           </li>
           <li>
             <Link to="http://localhost:3000/Undertale">
-            <img
-              src={undertaleBTN}
-              style={{width:"60px"}}
-              onMouseEnter={(e) => { e.currentTarget.src = undertaleBTN2 }}
-              onMouseLeave={(e) => { e.currentTarget.src = undertaleBTN }}
-            />
+              <img
+                src={undertaleBTN}
+                style={{ width: "60px" }}
+                onMouseEnter={(e) => { e.currentTarget.src = undertaleBTN2 }}
+                onMouseLeave={(e) => { e.currentTarget.src = undertaleBTN }}
+              />
             </Link>
           </li>
         </ul>
 
-      </section>
+      </div>
 
       <header>
         <center>
@@ -65,28 +67,37 @@ function IndexDeltarune() {
       <main>
         <center>
 
-          <section style={{ maxWidth: "600px", border: "4px solid rgb(0, 192, 0)" }}>
+          <section style={{ maxWidth: "600px", border: "4px solid rgb(0, 192, 0)", marginBottom: "100px" }}>
             <center >
-              <img src={CyberCity} />
+              <img src={CyberCity} style={{ width: "500px", margin: "10px", border: "3px solid rgb(0, 192, 0)" }} />
               <h1 className="title">¿QUE ES?</h1>
               <p>Deltarune es un videojuego de rol creado por Toby Fox, creador de Undertale. El Capítulo 1 fue lanzado el 31 de octubre de 2018 y el Capítulo 2 fue lanzado el 17 de septiembre de 2021. Comparte varias mecánicas con Undertale, como el uso del Tablero de balas en batalla y la posibilidad de terminar una batalla pacíficamente. Sin embargo, el videojuego rompe la cuarta pared tratando de negar al jugador la posibilidad de obtener un final distino por sus acciones. En su mayoría.
               </p>
             </center>
           </section>
 
-          <section style={{ maxWidth: "800px", border: "4px solid rgb(255, 255, 255)" }}>
+          <section style={{ maxWidth: "1000px", border: "4px solid rgb(255, 255, 255)", padding:"20px", minWidth: "600px"}}>
             <center>
+
               <h1 className="title" style={{ fontSize: "50px" }}>SELECCIONA EL CAPITULO</h1>
 
-              {chapters.map(chapter => (<ul style={{ listStyleType: "none", listStyle: "none", display: "block" }}>
-                <a>
-                  <li style={{ display: "inline", marginRight: "10px", marginLeft: "20px", float: "left" }} >Chapter {chapter.index}</li>
-                  <li style={{ display: "inline", marginRight: "10px", marginLeft: "20px" }} >{chapter.name}</li>
-                  <li style={{ display: "inline", marginRight: "10px", marginLeft: "20px", float: "right" }} >
-                    <img src={chapter.image} style={{ width: "100px" }} />
-                  </li>
-                </a>
-              </ul>))}
+              <div style={{ display: "inline-block", width: "100%" }}>
+                <ul style={{ listStyleType: "none", padding: "0", listStyle: "none", display: "block" }}>
+                  {chapters.map(chapter => (<>
+
+                    <li style={{  }} >
+                      <Link to="http://localhost:3000" style={{ display: "flex", lineHeight: "70px", alignItems: "center", justifyContent: "space-between", textAlign: "-webkit-match-parent" }}>
+                        <span style={{ display: "inline-block" }} >Capitulo {chapter.index}</span>
+                        <span style={{ display: "inline-block" }} >{chapter.name}</span>
+                        <img src={chapter.image} style={{ width: "80px", display: "block" }} />
+                      </Link>
+                    </li>
+
+                    <hr style={{ margin: "1.5% 0", opacity: "0.2", display: "block" }} />
+                  </>
+                  ))}
+                </ul>
+              </div>
 
             </center>
           </section>
