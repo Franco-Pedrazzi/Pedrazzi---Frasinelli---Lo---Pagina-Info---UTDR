@@ -219,8 +219,7 @@ dr-background {
 }
 
 #deltarune {
-  cursor: url("./files/Images/heart.png"), default !important;
-
+  cursor: url("./files/Images/cursorDrMain.png"), auto !important;
 }
 
 #deltarune section {

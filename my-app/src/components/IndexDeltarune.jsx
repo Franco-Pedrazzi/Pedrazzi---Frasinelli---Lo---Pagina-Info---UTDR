@@ -1,17 +1,60 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 import TitleLogo from "../files/Images/deltarune-title-logo.png";
 import CyberCity from "../files/Images/cyber_city.gif";
-import ChapterIcon from "../files/Images/ch3_icon.png"
+import ChapterIcon from "../files/Images/ch3_icon.png";
+import MainBTN from "../files/Images/mainBTN.png";
+import MainBTN2 from "../files/Images/mainBTN2.png";
+import deltaruneBTN from "../files/Images/deltaruneBTN.png"
+import deltaruneBTN2 from "../files/Images/deltaruneBTN2.png"
+import undertaleBTN from "../files/Images/undertaleBTN.png"
+import undertaleBTN2 from "../files/Images/undertaleBTN2.png"
 
 function IndexDeltarune() {
 
   const [chapters, setChapters] = useState([
     { index: 1, name: "Personajes", image: ChapterIcon }
-  ])
+  ]);
 
   return (
-    <body id="deltarune" style={{ backgroundColor: "transparent" }}>
+    <body id="deltarune" style={{ background: "transparent" }}>
+
+      <section id="buttons" style={{  }}>
+        <ul style={{ listStyleType: "none" }}>
+          <li>
+            <Link to="http://localhost:3000">
+            <img 
+              src={MainBTN}
+              style={{width:"60px"}}
+              onMouseEnter={(e) => { e.currentTarget.src = MainBTN2 }}
+              onMouseLeave={(e) => { e.currentTarget.src = MainBTN }}
+            />
+            </Link>
+          </li>
+          <li>
+            <Link to="http://localhost:3000/Deltarune">
+            <img
+              src={deltaruneBTN}
+              style={{width:"60px"}}
+              onMouseEnter={(e) => { e.currentTarget.src = deltaruneBTN2 }}
+              onMouseLeave={(e) => { e.currentTarget.src = deltaruneBTN }}
+            />
+            </Link>
+          </li>
+          <li>
+            <Link to="http://localhost:3000/Undertale">
+            <img
+              src={undertaleBTN}
+              style={{width:"60px"}}
+              onMouseEnter={(e) => { e.currentTarget.src = undertaleBTN2 }}
+              onMouseLeave={(e) => { e.currentTarget.src = undertaleBTN }}
+            />
+            </Link>
+          </li>
+        </ul>
+
+      </section>
 
       <header>
         <center>
