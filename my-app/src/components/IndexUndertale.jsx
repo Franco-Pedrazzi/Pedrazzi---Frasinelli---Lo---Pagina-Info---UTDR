@@ -9,10 +9,12 @@ import deltarune_logo_bg from '../files/Images/Deltarune-logo-background.png';
 import Annoying_dog_bg from '../files/Images/Annoying dog fondo.png';
 import Annoying_dog from '../files/Images/Annoying dog.png';
 import quit from '../files/Images/Quit.png'
-import loading from '../files/Images/Annoying_Dog_overworld_sleeping.webp';
 import intro from '../files/Images/undertale_intro.mp4'
 import Determination_soul from '../files/Images/detemination soul.png'
 import monster_soul from '../files/Images/monster soul.png'
+import undertale_Item_Logo from '../files/Images/undertale_item_logo.png'
+import undertale_Map_Logo from '../files/Images/map_icon.png'
+import save_point from '../files/Images/save point.png'
 function IndexUndertale() {
   const [docData, setDocData] = useState(null);
   const [introduccion, setIntroduccion] = useState(false);
@@ -32,16 +34,20 @@ function IndexUndertale() {
         </Link>
         
       </nav>
-      <nav><Link to='http://localhost:3000' className='Especial_button' style={{ display: "flex", paddingRight: "45px" }}>
-          <img src={Annoying_dog_bg} alt="Annoying_dog_bg" className='icon_bg' />
-          <img src={Annoying_dog} className='button-img' style={{ position: "relative", left: "-33%" }} />
-          <p className='button_text' style={{ position: "relative", left: "-15%" }}>Personages</p>
+      <nav>
+        <Link to='http://localhost:3000' className='Especial_button' style={{ display: "flex", paddingRight: "45px" }}>
+          <img src={undertale_Map_Logo} className='button-img'/>
+          <p className='button_text'>Mundo</p>
         </Link>
-        <Link to="http://localhost:3000/Deltarune" className='Especial_button' style={{ display: "flex" }}>
-          <img src={deltarune_logo_bg} alt="Deltarune logo background" className='icon_bg' />
-          <img src={deltarune_logo} className='button-img' style={{ position: "relative", left: "-29%" }} />
-          <p className='button_text' style={{ position: "relative", left: "-15%" }}>Deltarune</p>
-        </Link></nav>
+        <Link to="http://localhost:3000/Deltarune" className='Especial_button' style={{ display: "flex", paddingRight: "45px"  }}>
+          <img src={undertale_Item_Logo} className='button-img' style={{width: "50px",height: "50px"}} />
+          <p className='button_text'>Objetos</p>
+        </Link>
+        <Link to="http://localhost:3000/Deltarune" className='Especial_button' style={{ display: "flex", paddingRight: "45px"  }}>
+          <img src={save_point} className='button-img' style={{width: "50px",height: "50px"}}/>
+          <p className='button_text'>Curiosidades</p>
+        </Link>
+        </nav>
       <center>
         <div className='content'>
 
