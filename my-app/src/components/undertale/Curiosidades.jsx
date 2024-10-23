@@ -1,25 +1,20 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from "react-router-dom";
-import { db } from '../DataBase';
-import { doc, getDoc } from "firebase/firestore";
 
-import titulo from '../files/Images/Undertale titulo.png';
-import deltarune_logo from '../files/Images/Deltarune-logo.png';
-import deltarune_logo_bg from '../files/Images/Deltarune-logo-background.png';
-import Annoying_dog_bg from '../files/Images/Annoying dog fondo.png';
-import Annoying_dog from '../files/Images/Annoying dog.png';
-import quit from '../files/Images/Quit.png'
-import intro from '../files/Images/undertale_intro.mp4'
-import Determination_soul from '../files/Images/detemination soul.png'
-import monster_soul from '../files/Images/monster soul.png'
-import undertale_Item_Logo from '../files/Images/undertale_item_logo.png'
-import undertale_Map_Logo from '../files/Images/map_icon.png'
-import save_point from '../files/Images/save point.png'
-import {useNavigate} from "react-router-dom";
-import Mundo from './undertale/Mundo.jsx'
-import Curiosidades from './undertale/Curiosidades.jsx';
+import titulo from '../../files/Images/Undertale titulo.png';
+import deltarune_logo from '../../files/Images/Deltarune-logo.png';
+import deltarune_logo_bg from '../../files/Images/Deltarune-logo-background.png';
+import Annoying_dog_bg from '../../files/Images/Annoying dog fondo.png';
+import Annoying_dog from '../../files/Images/Annoying dog.png';
+import quit from '../../files/Images/Quit.png'
+import intro from '../../files/Images/undertale_intro.mp4'
+import Determination_soul from '../../files/Images/detemination soul.png'
+import monster_soul from '../../files/Images/monster soul.png'
+import undertale_Map_Logo from '../../files/Images/map_icon.png'
+import save_point from '../../files/Images/save point.png'
+import { useNavigate } from 'react-router-dom'
 
-function IndexUndertale() {
+function Curiosidades() {
   const [docData, setDocData] = useState(null);
   const [introduccion, setIntroduccion] = useState(false);
 
@@ -39,15 +34,14 @@ function IndexUndertale() {
         
       </nav>
       <nav>
-        <Link  to="http://localhost:3000/Undertale/Mundo" className='Especial_button' style={{ display: "flex", paddingRight: "45px" }}>
+        <Link to='http://localhost:3000' className='Especial_button' style={{ display: "flex", paddingRight: "45px" }}>
           <img src={undertale_Map_Logo} className='button-img'/>
           <p className='button_text'>Mundo</p>
-        </Link >
-
-        <Link  to="http://localhost:3000/Undertale/Curiosidades" className='Especial_button' style={{ display: "flex", paddingRight: "45px"  }}>
+        </Link>
+        <Link to="http://localhost:3000/Deltarune" className='Especial_button' style={{ display: "flex", paddingRight: "45px"  }}>
           <img src={save_point} className='button-img' style={{width: "50px",height: "50px"}}/>
           <p className='button_text'>Curiosidades</p>
-        </Link >
+        </Link>
         </nav>
       <center>
         <div className='content'>
@@ -118,4 +112,4 @@ Eso Tiene una simple respuesta <genocida>MIEDO</genocida> por que cuando un Huma
   );
 }
 
-export default IndexUndertale;
+export default Curiosidades;
