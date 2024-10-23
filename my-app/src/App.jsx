@@ -2,36 +2,29 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Favicon from "react-favicon";
 
-import { initializeApp } from "firebase/app";
-import { getFirestore, doc, getDoc } from "firebase/firestore"; // Importa Firestore
-import { db } from "./DataBase";
-
 import "./index.css";
 import titulo from "./files/Images/Titulo.png";
 import deltarune_logo from "./files/Images/Deltarune-logo.png";
 import deltarune_logo_bg from "./files/Images/Deltarune-logo-background.png";
 import Undertale_logo from "./files/Images/Undertale-logo.png";
-import loading from "./files/Images/Annoying_Dog_overworld_sleeping.webp";
+
 
 function App() {
   const [docData, setDocData] = useState(null);
 
-  useEffect(() => {
-    async function fetchData() {
-      try {
-        const docRef = doc(db, "Annoying dog", "TB");
-        const docSnap = await getDoc(docRef);
-        if (docSnap.exists()) {
-          setDocData(docSnap.data());
-        } else {
-          console.log("No se encontró el documento");
-        }
-      } catch (error) {
-        console.error("Error al obtener el documento:", error);
-      }
-    }
-    fetchData();
-  }, []);
+    useEffect(() => {
+      // Crear un script de forma dinámica para cargar el script de Tenor
+      const script = document.createElement('script');
+      script.src = 'https://tenor.com/embed.js';
+      script.async = true;
+      document.body.appendChild(script);
+  
+      // Limpiar el script cuando el componente se desmonte
+      return () => {
+        document.body.removeChild(script);
+      };
+    }, []);
+    const imageUrl = "https://media.tenor.com/4WH8ESkQb8IAAAAC/lesser-dog.gif"; // URL de la imagen (GIF en este caso)
 
   return (
     <div>
@@ -56,7 +49,7 @@ function App() {
         <div className="content">
           <img src={titulo} alt="Titulo" className="titulo" />
           <p>by toby fox</p>
-          {docData ? (
+          
             <div>
               <h1 className="multicolortext">Toby Fox</h1>
               <h3><span class="multicolortext">Robert Fox</span> (conocido profesionalmente como el famoso <span class="multicolortext">Toby Fox</span>) es un creador de videojuegos y compositor de música, es conocido por ser el creador de <span class="multicolortext">Undertale</span>.</h3>
@@ -70,10 +63,26 @@ function App() {
                   la canción <span class="multicolortext">Battle Tower</span>, para <span class="multicolortext">Little Town Hero</span> algunas de las pistas más destacadas del juego y 
                   para <span class="multicolortext">OMORI</span> contribuyó con una pista musical para el juego, etc.
               </h3>
+              <div className="tenor-gif-embed" 
+                data-postid="4834820" 
+                data-share-method="host" 
+                data-aspect-ratio="0.204082" 
+                data-width="100%">
+                <a href="https://tenor.com/view/lesser-dog-undertale-gif-4834820">Lesser Dog GIF</a> 
+                from <a href="https://tenor.com/search/lesser-gifs">Lesser GIFs</a>
+              </div>
+
+              <div className="tenor-gif-embed"
+                data-postid="26048955"
+                data-share-method="host"
+                data-aspect-ratio="1"
+                data-width="50%">
+                <a href="https://tenor.com/view/funny-dance-undertale-sans-gif-26048955">Funny Dance GIF</a>
+                from <a href="https://tenor.com/search/funny-gifs">Funny GIFs</a>
+              </div>
+
+
             </div>
-          ) : (
-            <img src={loading}></img>
-          )}
         </div>
       </center>
     </div>

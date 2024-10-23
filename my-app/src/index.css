@@ -310,3 +310,11 @@ dr-background {
   color: transparent ;
   width: 310px;
 }
+
+.tenor-gif-embed {
+  position: relative;
+  float: right;
+  top: -1200px;
+  max-width: 9%;
+  height: 500px;
+}
