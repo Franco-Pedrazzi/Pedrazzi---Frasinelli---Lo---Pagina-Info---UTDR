@@ -14,9 +14,11 @@ import undertaleBTN2 from "../files/Images/undertaleBTN2.png"
 function IndexDeltarune() {
 
   const [chapters, setChapters] = useState([
-    { index: 1, name: "Personajes", image: ChapterIcon },
+    { index: 1, name: "Capitulos", image: ChapterIcon, articles: [{ name: "", miniDesc: "", imageLogo: "", content: [] }] },
     { index: 2, name: "Personajes", image: ChapterIcon },
-    { index: 3, name: "Personajes", image: ChapterIcon }
+    { index: 3, name: "Jefes", image: ChapterIcon },
+    { index: 4, name: "Localizaciones", image: ChapterIcon },
+    { index: 5, name: "Mecanicas", image: ChapterIcon }
   ]);
 
   return (
@@ -64,10 +66,10 @@ function IndexDeltarune() {
         </center>
       </header>
 
-      <main>
+      <main style={{ justifyContent: "space-between" }}>
         <center>
 
-          <section style={{ maxWidth: "600px", border: "4px solid rgb(0, 192, 0)", marginBottom: "100px" }}>
+          <section style={{ maxWidth: "600px", border: "4px solid rgb(0, 192, 0)" }}>
             <center >
               <img src={CyberCity} style={{ width: "500px", margin: "10px", border: "3px solid rgb(0, 192, 0)" }} />
               <h1 className="title">¿QUE ES?</h1>
@@ -76,21 +78,28 @@ function IndexDeltarune() {
             </center>
           </section>
 
-          <section style={{ maxWidth: "1000px", border: "4px solid rgb(255, 255, 255)", padding:"20px", minWidth: "600px"}}>
+          <section style={{ maxWidth: "1000px", border: "4px solid rgb(255, 255, 255)", padding: "20px", minWidth: "600px" }}>
             <center>
-
-              <h1 className="title" style={{ fontSize: "50px" }}>SELECCIONA EL CAPITULO</h1>
+              <h1 className="title" style={{ fontSize: "50px" }}>SELECCIONA LA CAPITULO</h1>
 
               <div style={{ display: "inline-block", width: "100%" }}>
                 <ul style={{ listStyleType: "none", padding: "0", listStyle: "none", display: "block" }}>
+
+                  <hr style={{ margin: "1.5% 0", opacity: "0.2", display: "block" }} />
                   {chapters.map(chapter => (<>
 
-                    <li style={{  }} >
-                      <Link to="http://localhost:3000" style={{ display: "flex", lineHeight: "70px", alignItems: "center", justifyContent: "space-between", textAlign: "-webkit-match-parent" }}>
-                        <span style={{ display: "inline-block" }} >Capitulo {chapter.index}</span>
+                    <li style={{}} >
+
+                      <Link to={`http://localhost:3000/Deltarune/${chapter.name}`}
+                        style={{ display: "flex", lineHeight: "70px", alignItems: "center", justifyContent: "space-between", textAlign: "-webkit-match-parent" }}
+                      >
+
+                        <span style={{ display: "inline-block" }} >Chapter {chapter.index}</span>
                         <span style={{ display: "inline-block" }} >{chapter.name}</span>
                         <img src={chapter.image} style={{ width: "80px", display: "block" }} />
+
                       </Link>
+
                     </li>
 
                     <hr style={{ margin: "1.5% 0", opacity: "0.2", display: "block" }} />
