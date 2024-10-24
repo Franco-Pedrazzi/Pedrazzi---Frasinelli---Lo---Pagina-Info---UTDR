@@ -63,7 +63,7 @@ function App() {
                   la canción <span class="multicolortext">Battle Tower</span>, para <span class="multicolortext">Little Town Hero</span> algunas de las pistas más destacadas del juego y 
                   para <span class="multicolortext">OMORI</span> contribuyó con una pista musical para el juego, etc.
               </h3>
-              <div className="tenor-gif-embed" 
+              <div className="tenor-gif-embed gif-1" 
                 data-postid="4834820" 
                 data-share-method="host" 
                 data-aspect-ratio="0.204082" 
@@ -72,7 +72,7 @@ function App() {
                 from <a href="https://tenor.com/search/lesser-gifs">Lesser GIFs</a>
               </div>
 
-              <div className="tenor-gif-embed"
+              <div className="tenor-gif-embed gif-2"
                 data-postid="26048955"
                 data-share-method="host"
                 data-aspect-ratio="1"

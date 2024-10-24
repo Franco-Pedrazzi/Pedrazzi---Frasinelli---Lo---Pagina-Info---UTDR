@@ -312,9 +312,21 @@ dr-background {
 }
 
 .tenor-gif-embed {
-  position: relative;
-  float: right;
-  top: -1200px;
+  width: 100%; 
   max-width: 9%;
   height: 500px;
 }
+
+.gif-1 {
+  position: fixed; /* Posición fija respecto a la ventana */
+          top: -1220px;
+          left: 600px;
+          
+}
+
+.gif-2 {
+  position: fixed; /* Posición fija respecto a la ventana */
+          top: -1720px;
+          left: 240px;
+}
+
