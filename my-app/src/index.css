@@ -321,3 +321,33 @@ dr-background {
 #deltarune img {
   image-rendering: pixelated;
 }
+
+
+.multicolortext {
+  background-image: linear-gradient(to left, violet, rgb(163, 84, 219),rgb(64, 171, 233), rgb(64, 64, 233), rgb(38, 146, 38), lightgreen, yellow, orange, red)!important;
+  -webkit-background-clip: text !important;
+  -moz-background-clip: text !important;
+  background-clip: text !important;
+  color: transparent ;
+  width: 310px;
+}
+
+.tenor-gif-embed {
+  width: 100%; 
+  max-width: 9%;
+  height: 500px;
+}
+
+.gif-1 {
+  position: fixed; /* Posición fija respecto a la ventana */
+          top: -1220px;
+          left: 600px;
+          
+}
+
+.gif-2 {
+  position: fixed; /* Posición fija respecto a la ventana */
+          top: -1720px;
+          left: 240px;
+}
+

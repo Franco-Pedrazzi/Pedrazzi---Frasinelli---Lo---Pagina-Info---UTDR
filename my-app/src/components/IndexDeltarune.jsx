@@ -10,8 +10,26 @@ import deltaruneBTN from "../files/Images/deltaruneBTN.png"
 import deltaruneBTN2 from "../files/Images/deltaruneBTN2.png"
 import undertaleBTN from "../files/Images/undertaleBTN.png"
 import undertaleBTN2 from "../files/Images/undertaleBTN2.png"
+import MenuSound from "../files/snd_menumove.mp3"
 
 function IndexDeltarune() {
+
+  const sound = new Audio(MenuSound)
+  sound.volume = 0.5;
+
+  useEffect(() => {
+    let array = document.getElementsByTagName("a");
+    for (let i = 0; i < array.length; i++) {
+      array[i].addEventListener('mouseenter', () => {
+        try {
+          sound.play();
+        }
+        catch (error) {
+          console.log(error);
+        }
+      });
+    }
+  }, []);
 
   const [chapters, setChapters] = useState([
     { index: 1, name: "Capitulos", image: ChapterIcon, articles: [{ name: "", miniDesc: "", imageLogo: "", content: [] }] },
@@ -92,11 +110,13 @@ function IndexDeltarune() {
 
                       <Link to={`http://localhost:3000/Deltarune/${chapter.name}`}
                         style={{ display: "flex", lineHeight: "70px", alignItems: "center", justifyContent: "space-between", textAlign: "-webkit-match-parent" }}
+                        onMouseEnter={(e) => { e.currentTarget.children[2].setAttribute("style", {width: "80px", display: "block", WebkitFilter: "sepia(175%) saturate(99999999%) "} )}}
+                        onMouseLeave={(e) => { e.currentTarget.children[2].setAttribute("style", {width: "80px", display: "block" } )}}
                       >
 
                         <span style={{ display: "inline-block" }} >Chapter {chapter.index}</span>
                         <span style={{ display: "inline-block" }} >{chapter.name}</span>
-                        <img src={chapter.image} style={{ width: "80px", display: "block" }} />
+                        <img src={chapter.image} style={{ width: "80px", display: "block", WebkitFilter: "sepia(175%) saturate(99999999%) " }} />
 
                       </Link>
 
