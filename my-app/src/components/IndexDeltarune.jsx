@@ -17,10 +17,9 @@ import undertaleBTN2 from "../files/Images/undertaleBTN2.png"
 import MenuSound from "../files/snd_menumove.mp3"
 
 function IndexDeltarune() {
-
-  const [docData, setDocData] = useState(null);
+  const [docInfo, setDocInfo] = useState(null);
   const [chapters, setChapters] = useState([
-    {
+    /*{
       index: 1, name: "Capitulos", image: ChapterIcon, articles: [
         { name: "Capitulo 1", miniDesc: "The Beginning", content: [] },
         { name: "Capitulo 2", miniDesc: "A Cyber's World", content: [] }]
@@ -51,16 +50,17 @@ function IndexDeltarune() {
         { name: "SAVE", miniDesc: "Aveces, la ves parpadeando. Aquella luz que sólo tú puedes ver. Por segunda naturaleza, te acercas y... [Archivo Salvado]", content: [] },
         { name: "ALMA", miniDesc: "Sientes como si tu ALMA brillara.", content: [] },  
         { name: "SURVEY_PROGRAM (Introduccion)", miniDesc: "ESTAS AHI? ESTAMOS CONECTADOS?", content: [] }]
-    }
+    }*/
   ]);
+
   useEffect(() => {
     async function fetchData() {
       try {
         const docRef = doc(db, "Deltarune", "Informacion");
         const docSnap = await getDoc(docRef);
         if (docSnap.exists()) {
-          setDocData(docSnap.data());
-          setChapters(docData.categories)
+          setChapters(docSnap.data().categories);
+          setDocInfo(docSnap.data())
         } else {
           console.log("No se encontró el documento");
         }
@@ -68,7 +68,7 @@ function IndexDeltarune() {
         console.error("Error al obtener el documento:", error);
       }
     }
-    async function playSound() {
+    /*async function playSound() {
       let array = document.getElementsByTagName("a");
       for (let i = 0; i < array.length; i++) {
         array[i].addEventListener('mouseenter', () => {
@@ -83,14 +83,15 @@ function IndexDeltarune() {
         });
       }
     }
+    playSound();  */
     fetchData();
-    playSound();
   }, []);
+
   /*useEffect(() => {
-    async function fetchData() {
+    async function sendData() {
       try {
         setDoc(doc(db, "Deltarune", "Informacion"), {
-          mainPageData: "Deltarune es un videojuego de rol creado por Toby Fox, creador de Undertale. El Capítulo 1 fue lanzado el 31 de octubre de 2018 y el Capítulo 2 fue lanzado el 17 de septiembre de 2021. Comparte varias mecánicas con Undertale, como el uso del Tablero de balas en batalla y la posibilidad de terminar una batalla pacíficamente. Sin embargo, el videojuego rompe la cuarta pared tratando de negar al jugador la posibilidad de obtener un final distinto por sus acciones. En su mayoría.",
+          content: [],
           categories: [
             {
               index: 1, name: "Capitulos", image: ChapterIcon, articles: [
@@ -109,8 +110,8 @@ function IndexDeltarune() {
             {
               index: 3, name: "Jefes", image: ChapterIcon, articles: [
                 { name: "Rey", miniDesc: "Para mi gente, soy un héroe... ¿Para ustedes? ¡¡¡SOY EL TIPO MALO!!!", content: [] },
-                { name: "Reina", miniDesc: "Solo Quiero Hacer A Todos Sonreir Y Si Tengo Que Volverme Una Malvada Villana Para Conseguirlo Es Eso Malo?", content: [] },
-                { name: "Jevil", miniDesc: "AHORA, AHORA!! QUE LOS JUEGOS COMIENCEN!!", content: [] },
+                { name: "Reina", miniDesc: "Solo Quiero Hacer A Todos Sonreir Y Si Tengo Que Volverme Una Malvada Villana Para Conseguirlo ¿Es Eso Malo?", content: [] },
+                { name: "Jevil", miniDesc: "¡¡AHORA, AHORA!! ¡¡QUE LOS JUEGOS COMIENCEN!!", content: [] },
                 { name: "Spamton", miniDesc: "DESPUÉS DE TODO, ¡TÚ QUIERES SER UN [Big Shot]! ¡¡EAHAHAHAHAA!!", content: [] }]
             },
             {
@@ -122,7 +123,7 @@ function IndexDeltarune() {
               index: 5, name: "Mecanicas", image: ChapterIcon, articles: [
                 { name: "SAVE", miniDesc: "Aveces, la ves parpadeando. Aquella luz que sólo tú puedes ver. Por segunda naturaleza, te acercas y... [Archivo Salvado]", content: [] },
                 { name: "ALMA", miniDesc: "Sientes como si tu ALMA brillara.", content: [] },  
-                { name: "SURVEY_PROGRAM (Introduccion)", miniDesc: "ESTAS AHI? ESTAMOS CONECTADOS?", content: [] }]
+                { name: "SURVEY_PROGRAM (Introduccion)", miniDesc: "¿ESTAS AHI? ¿ESTAMOS CONECTADOS?", content: [] }]
             }
           ]
         });
@@ -131,16 +132,15 @@ function IndexDeltarune() {
         console.error("Error al obtener el documento:", error);
       }
     }
-    fetchData();
-  }, []);*/
-
-  console.log(docData);
+    sendData();
+  }, []);
+  console.log(docInfo);*/
 
   const buttons = [
     {link: "http://localhost:3000", img1:MainBTN , img2:MainBTN2},
     {link: "http://localhost:3000/Undertale", img1:undertaleBTN , img2:undertaleBTN2},
     {link: "http://localhost:3000/Deltarune", img1:deltaruneBTN , img2:deltaruneBTN2}]
-
+    
   return (
     <body id="deltarune" style={{ background: "transparent" }}>
 
@@ -184,8 +184,7 @@ function IndexDeltarune() {
 
               <div style={{ display: "inline-block", width: "100%" }}>
                 <ul style={{ listStyleType: "none", padding: "0", listStyle: "none", display: "block" }}>
-
-                  <hr style={{ margin: "1.5% 0", opacity: "0.2", display: "block" }} />
+                  <hr/>
                   {chapters.map(chapter => (<>
 
                     <li style={{}} >
@@ -203,8 +202,7 @@ function IndexDeltarune() {
                       </Link>
 
                     </li>
-
-                    <hr style={{ margin: "1.5% 0", opacity: "0.2", display: "block" }} />
+                    <hr/>
                   </>
                   ))}
                 </ul>
