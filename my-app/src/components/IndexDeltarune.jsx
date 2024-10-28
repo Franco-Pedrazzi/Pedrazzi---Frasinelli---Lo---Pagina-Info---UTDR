@@ -8,13 +8,9 @@ import { db } from "../DataBase";
 import TitleLogo from "../files/Images/deltarune-title-logo.png";
 import CyberCity from "../files/Images/cyber_city.gif";
 import ChapterIcon from "../files/Images/ch3_icon.png";
-import MainBTN from "../files/Images/mainBTN.png";
-import MainBTN2 from "../files/Images/mainBTN2.png";
-import deltaruneBTN from "../files/Images/deltaruneBTN.png"
-import deltaruneBTN2 from "../files/Images/deltaruneBTN2.png"
-import undertaleBTN from "../files/Images/undertaleBTN.png"
-import undertaleBTN2 from "../files/Images/undertaleBTN2.png"
-import MenuSound from "../files/snd_menumove.mp3"
+import MenuSound from "../files/snd_menumove.mp3";
+
+import DRButtons from "./DRButtons";
 
 function IndexDeltarune() {
   const [docInfo, setDocInfo] = useState(null);
@@ -136,87 +132,70 @@ function IndexDeltarune() {
   }, []);
   console.log(docInfo);*/
 
-  const buttons = [
-    {link: "http://localhost:3000", img1:MainBTN , img2:MainBTN2},
-    {link: "http://localhost:3000/Undertale", img1:undertaleBTN , img2:undertaleBTN2},
-    {link: "http://localhost:3000/Deltarune", img1:deltaruneBTN , img2:deltaruneBTN2}]
-    
+
   return (
-    <body id="deltarune" style={{ background: "transparent" }}>
+    <>
+      <DRButtons />
+      <body id="deltarune" style={{ background: "transparent" }}>
 
-      <div id="buttons" style={{ position: "fixed", zIndex: "10000", margin: "-10px" }}>
-        <ul style={{ listStyleType: "none" }}>
-        {buttons.map((elem) => 
-          (<li>
-            <Link to={elem.link}>
-              <img
-                src={elem.img1}
-                style={{ width: "60px" }}
-                onMouseEnter={(e) => { e.currentTarget.src = elem.img2 }}
-                onMouseLeave={(e) => { e.currentTarget.src = elem.img1 }}
-              />
-            </Link>
-          </li>))}
-        </ul>
-      </div>
+        <header>
+          <center>
+            <img src={TitleLogo} style={{ maxWidth: "700px", margin: "20px" }} className="logo" />
+          </center>
+        </header>
 
-      <header>
-        <center>
-          <img src={TitleLogo} style={{ maxWidth: "700px", margin: "20px" }} className="logo" />
-        </center>
-      </header>
+        <main style={{ justifyContent: "space-between" }}>
+          <center>
 
-      <main style={{ justifyContent: "space-between" }}>
-        <center>
+            <section style={{ maxWidth: "600px", border: "4px solid rgb(0, 192, 0)" }}>
+              <center >
+                <img src={CyberCity} style={{ width: "500px", margin: "10px", border: "3px solid rgb(0, 192, 0)" }} />
+                <h1 className="title">¿QUE ES?</h1>
+                <p>Deltarune es un videojuego de rol creado por Toby Fox, creador de Undertale. El Capítulo 1 fue lanzado el 31 de octubre de 2018 y el Capítulo 2 fue lanzado el 17 de septiembre de 2021. Comparte varias mecánicas con Undertale, como el uso del Tablero de balas en batalla y la posibilidad de terminar una batalla pacíficamente. Sin embargo, el videojuego rompe la cuarta pared tratando de negar al jugador la posibilidad de obtener un final distinto por sus acciones. En su mayoría.
+                </p>
+              </center>
+            </section>
 
-          <section style={{ maxWidth: "600px", border: "4px solid rgb(0, 192, 0)" }}>
-            <center >
-              <img src={CyberCity} style={{ width: "500px", margin: "10px", border: "3px solid rgb(0, 192, 0)" }} />
-              <h1 className="title">¿QUE ES?</h1>
-              <p>Deltarune es un videojuego de rol creado por Toby Fox, creador de Undertale. El Capítulo 1 fue lanzado el 31 de octubre de 2018 y el Capítulo 2 fue lanzado el 17 de septiembre de 2021. Comparte varias mecánicas con Undertale, como el uso del Tablero de balas en batalla y la posibilidad de terminar una batalla pacíficamente. Sin embargo, el videojuego rompe la cuarta pared tratando de negar al jugador la posibilidad de obtener un final distinto por sus acciones. En su mayoría.
-              </p>
-            </center>
-          </section>
+            <section style={{ maxWidth: "1000px", border: "4px solid rgb(255, 255, 255)", padding: "20px", minWidth: "600px" }}>
+              <center>
+                <h1 className="title" style={{ fontSize: "50px" }}>SELECCIONA LA CAPITULO</h1>
 
-          <section style={{ maxWidth: "1000px", border: "4px solid rgb(255, 255, 255)", padding: "20px", minWidth: "600px" }}>
-            <center>
-              <h1 className="title" style={{ fontSize: "50px" }}>SELECCIONA LA CAPITULO</h1>
+                <div style={{ display: "inline-block", width: "100%" }}>
+                  <ul style={{ listStyleType: "none", padding: "0", listStyle: "none", display: "block" }}>
+                    <hr />
+                    {chapters.map(chapter => (<>
 
-              <div style={{ display: "inline-block", width: "100%" }}>
-                <ul style={{ listStyleType: "none", padding: "0", listStyle: "none", display: "block" }}>
-                  <hr/>
-                  {chapters.map(chapter => (<>
+                      <li style={{}} >
 
-                    <li style={{}} >
+                        <Link to={`http://localhost:3000/Deltarune/${chapter.name}`}
+                          style={{ display: "flex", lineHeight: "70px", alignItems: "center", justifyContent: "space-between", textAlign: "-webkit-match-parent" }}
+                          onMouseEnter={(e) => { e.currentTarget.children[2].style.WebkitFilter = "sepia(175%) saturate(99999999%) "}}
+                          onMouseLeave={(e) => { e.currentTarget.children[2].style.WebkitFilter = "none" }}
+                        >
 
-                      <Link to={`http://localhost:3000/Deltarune/${chapter.name}`}
-                        style={{ display: "flex", lineHeight: "70px", alignItems: "center", justifyContent: "space-between", textAlign: "-webkit-match-parent" }}
-                        onMouseEnter={(e) => { e.currentTarget.children[2].setAttribute("style", { width: "80px", display: "block", WebkitFilter: "sepia(175%) saturate(99999999%) " }) }}
-                        onMouseLeave={(e) => { e.currentTarget.children[2].setAttribute("style", { width: "80px", display: "block" }) }}
-                      >
+                          <span style={{ display: "inline-block" }} >Chapter {chapter.index}</span>
+                          <span style={{ display: "inline-block" }} >{chapter.name}</span>
+                          <img src={chapter.image} style={{ width: "80px", display: "block" }} />
 
-                        <span style={{ display: "inline-block" }} >Chapter {chapter.index}</span>
-                        <span style={{ display: "inline-block" }} >{chapter.name}</span>
-                        <img src={chapter.image} style={{ width: "80px", display: "block", WebkitFilter: "sepia(175%) saturate(99999999%) " }} />
+                        </Link>
 
-                      </Link>
+                      </li>
+                      <hr />
+                    </>
+                    ))}
+                  </ul>
+                </div>
 
-                    </li>
-                    <hr/>
-                  </>
-                  ))}
-                </ul>
-              </div>
+              </center>
+            </section>
 
-            </center>
-          </section>
+          </center>
+        </main>
 
-        </center>
-      </main>
+        <dr-background />
 
-      <dr-background />
-
-    </body>
+      </body>
+    </>
   );
 }
 

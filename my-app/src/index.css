@@ -314,7 +314,8 @@ dr-background {
 #deltarune h3,
 #deltarune h4,
 #deltarune h5,
-#deltarune h6 {
+#deltarune h6,
+#deltarune span {
   font-family: "8bitoperator JVE";
   font-weight: normal;
 }
