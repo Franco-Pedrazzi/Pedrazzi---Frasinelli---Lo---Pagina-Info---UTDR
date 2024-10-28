@@ -30,13 +30,13 @@ function IndexUndertale() {
           <img src={deltarune_logo} className='button-img' style={{ position: "relative", left: "-29%" }} />
           <p className='button_text' style={{ position: "relative", left: "-15%" }}>Deltarune</p>
         </Link>
-        
+
       </nav>
       <nav><Link to='http://localhost:3000' className='Especial_button' style={{ display: "flex", paddingRight: "45px" }}>
-          <img src={Annoying_dog_bg} alt="Annoying_dog_bg" className='icon_bg' />
-          <img src={Annoying_dog} className='button-img' style={{ position: "relative", left: "-33%" }} />
-          <p className='button_text' style={{ position: "relative", left: "-15%" }}>Personages</p>
-        </Link>
+        <img src={Annoying_dog_bg} alt="Annoying_dog_bg" className='icon_bg' />
+        <img src={Annoying_dog} className='button-img' style={{ position: "relative", left: "-33%" }} />
+        <p className='button_text' style={{ position: "relative", left: "-15%" }}>Personages</p>
+      </Link>
         <Link to="http://localhost:3000/Deltarune" className='Especial_button' style={{ display: "flex" }}>
           <img src={deltarune_logo_bg} alt="Deltarune logo background" className='icon_bg' />
           <img src={deltarune_logo} className='button-img' style={{ position: "relative", left: "-29%" }} />
@@ -89,13 +89,13 @@ function IndexUndertale() {
               </div>
               <h1>Los Monstruos</h1>
               <h3>Los monstruos a diferencia de los humanos su cuerpo está hecho con magia, haciendo de que ellos puedan hacer poderosos ataques mágicos pero aun asi los humanos son más poderosos, ya que los cuerpos de los monstruos y sus Almas son más débiles que las de un humano, tan haci que cuando mueren su cuerpo se hace polvo y se alma pedazos, todos los monstruos a excepción de uno su Rey <genocida>Asgore</genocida> ya que su alma aunque él muera se mantendrá intacta.
-              <h3>asi se ve el alma de los monstruos</h3>
-              <img style={{width:"20%",height:"20%"}}src={monster_soul}></img>
+                <h3>asi se ve el alma de los monstruos</h3>
+                <img style={{ width: "20%", height: "20%" }} src={monster_soul}></img>
               </h3>
               <br />
-<h2>¿Por qué los humanos encerraron a los monstruos en el Underground si eran más débiles que ellos?</h2>
-           <h3>
-Eso Tiene una simple respuesta <genocida>MIEDO</genocida> por que cuando un Humano muere su alma se mantiene y los monstruos puede absorber y hacerse mas poderosos de tal modo que con 7 se vuelven <genocida>DIOSES</genocida>. <genocida>Asgore</genocida> ya tienen 6 y buscan la séptima para poder destruir la barrera que los mantiene encerrados y declararle la guerra a los humanos.</h3>
+              <h2>¿Por qué los humanos encerraron a los monstruos en el Underground si eran más débiles que ellos?</h2>
+              <h3>
+                Eso Tiene una simple respuesta <genocida>MIEDO</genocida> por que cuando un Humano muere su alma se mantiene y los monstruos puede absorber y hacerse mas poderosos de tal modo que con 7 se vuelven <genocida>DIOSES</genocida>. <genocida>Asgore</genocida> ya tienen 6 y buscan la séptima para poder destruir la barrera que los mantiene encerrados y declararle la guerra a los humanos.</h3>
 
             </div>
           ) : (
