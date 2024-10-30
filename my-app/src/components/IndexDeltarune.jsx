@@ -82,7 +82,7 @@ function IndexDeltarune() {
     playSound();  */
     fetchData();
   }, []);
-
+  
   /*useEffect(() => {
     async function sendData() {
       try {
@@ -90,12 +90,12 @@ function IndexDeltarune() {
           content: [],
           categories: [
             {
-              index: 1, name: "Capitulos", image: ChapterIcon, articles: [
+              index: 1, name: "Capitulos", image: "https://firebasestorage.googleapis.com/v0/b/usuarios-ff69d.appspot.com/o/ch1_icon.png?alt=media&token=6f949a52-f319-4214-882f-4100d741f1dc", articles: [
                 { name: "Capitulo 1", miniDesc: "The Beginning", content: [] },
                 { name: "Capitulo 2", miniDesc: "A Cyber's World", content: [] }]
             },
             {
-              index: 2, name: "Personajes", image: ChapterIcon, articles: [
+              index: 2, name: "Personajes", image: "https://firebasestorage.googleapis.com/v0/b/usuarios-ff69d.appspot.com/o/ch2_icon.png?alt=media&token=6cebb19b-d950-417d-8c05-5e69ccc0107d", articles: [
                 { name: "Kris", miniDesc: "Sólo eres tú.", content: [] },
                 { name: "Susie", miniDesc: "No te molestes en responder. Por si aún no te has dado cuenta... Tus decisiones no importan.", content: [] },
                 { name: "Ralsei", miniDesc: "¡Espero que podamos ser buenos amigos!", content: [] },
@@ -104,19 +104,19 @@ function IndexDeltarune() {
                 { name: "Berdly", miniDesc: "¡Es LORD Berdly para ustedes simplones!", content: [] }]
             },
             {
-              index: 3, name: "Jefes", image: ChapterIcon, articles: [
+              index: 3, name: "Jefes", image: "https://firebasestorage.googleapis.com/v0/b/usuarios-ff69d.appspot.com/o/ch3_icon.png?alt=media&token=14386d5e-043c-4bf7-b393-c438b9d02146", articles: [
                 { name: "Rey", miniDesc: "Para mi gente, soy un héroe... ¿Para ustedes? ¡¡¡SOY EL TIPO MALO!!!", content: [] },
                 { name: "Reina", miniDesc: "Solo Quiero Hacer A Todos Sonreir Y Si Tengo Que Volverme Una Malvada Villana Para Conseguirlo ¿Es Eso Malo?", content: [] },
                 { name: "Jevil", miniDesc: "¡¡AHORA, AHORA!! ¡¡QUE LOS JUEGOS COMIENCEN!!", content: [] },
                 { name: "Spamton", miniDesc: "DESPUÉS DE TODO, ¡TÚ QUIERES SER UN [Big Shot]! ¡¡EAHAHAHAHAA!!", content: [] }]
             },
             {
-              index: 4, name: "Localizaciones", image: ChapterIcon, articles: [
+              index: 4, name: "Localizaciones", image: "https://firebasestorage.googleapis.com/v0/b/usuarios-ff69d.appspot.com/o/ch4_icon.png?alt=media&token=560a85ac-a37a-40ad-9037-0635c4b8f4cf", articles: [
                 { name: "Hometown (Mundo de Luz)", miniDesc: "El inicio", content: [] },
                 { name: "Mundo(s) Oscuro(s)", miniDesc: "LA OSCURIDAD", content: [] }]
             },
             {
-              index: 5, name: "Mecanicas", image: ChapterIcon, articles: [
+              index: 5, name: "Mecanicas", image: "https://firebasestorage.googleapis.com/v0/b/usuarios-ff69d.appspot.com/o/ch5_icon.png?alt=media&token=06f508f4-77a8-494e-a23d-019f9438127d", articles: [
                 { name: "SAVE", miniDesc: "Aveces, la ves parpadeando. Aquella luz que sólo tú puedes ver. Por segunda naturaleza, te acercas y... [Archivo Salvado]", content: [] },
                 { name: "ALMA", miniDesc: "Sientes como si tu ALMA brillara.", content: [] },  
                 { name: "SURVEY_PROGRAM (Introduccion)", miniDesc: "¿ESTAS AHI? ¿ESTAMOS CONECTADOS?", content: [] }]
@@ -130,17 +130,17 @@ function IndexDeltarune() {
     }
     sendData();
   }, []);
-  console.log(docInfo);*/
-
+  console.log(docInfo);
+*/
 
   return (
     <>
       <DRButtons />
       <body id="deltarune" style={{ background: "transparent" }}>
 
-        <header>
+      <header>
           <center>
-            <img src={TitleLogo} style={{ maxWidth: "700px", margin: "20px" }} className="logo" />
+            <img src={TitleLogo} style={{ maxWidth: "700px", marginBottom: "20px", marginTop: "20px"  }} className="logo" />
           </center>
         </header>
 

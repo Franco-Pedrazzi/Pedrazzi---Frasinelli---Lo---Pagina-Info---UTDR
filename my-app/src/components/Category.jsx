@@ -7,6 +7,8 @@ import { initializeApp } from "firebase/app";
 import { getFirestore, doc, getDoc, setDoc } from "firebase/firestore"; // Importa Firestore
 import { db } from "../DataBase";
 
+import TitleLogo from "../files/Images/deltarune-title-logo.png";
+
 function Category() {
 
   const url = useParams().categoria;
@@ -49,13 +51,19 @@ function Category() {
   return (
     <>
       <DRButtons />
-      <body id="deltarune" style={{ background: "transparent", display: "flex", justifyContent: "center", alignItems: "center" }}>
+      <body id="deltarune" style={{ background: "transparent" }}>
+
+      <header style={{ overflow: "hidden"}}>
+          <center>
+            <img src={TitleLogo} style={{ width: "100%", maxWidth: "700px", marginBottom: "20px", marginTop: "20px"  }} className="logo" />
+          </center>
+        </header>
 
         {articles == null ? (<center>
           <h3>Pero no vino nadie.</h3>
         </center>)
           :
-          (
+          (<main style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
             <center>
               <section style={{ width: "100%", maxWidth: "700px" }}>
                 <h1 className="title">{url.toUpperCase()}</h1>
@@ -63,17 +71,18 @@ function Category() {
                   <hr />
                   {articles.map(article => (<>
                     <li style={{ margin: "20px" }}>
-                      <Link to={`http://localhost:3000/Deltarune/${url}/${article.name}`}>
-                        <h4 style={{ fontSize: "30px", margin: "0px" }}>{article.name}</h4>
+                      <Link to={`http://localhost:3000/Deltarune/${url}/${article.name.replace(/ /g, '')}`}>
+                        <h4 style={{ fontSize: "100%", margin: "0px" }}>{article.name}</h4>
                         <p style={{ fontSize: "18px", textShadow: "none", margin: "0px" }}>{article.miniDesc}</p>
                       </Link>
                     </li>
                     <hr />
                   </>))}
                 </ul>
+                <Link to={`http://localhost:3000/Deltarune`}><h3 style={{ fontSize: "200%" }}>VOLVER</h3></Link>
               </section>
             </center>
-          )}
+          </main>)}
       </body>
     </>
   );
