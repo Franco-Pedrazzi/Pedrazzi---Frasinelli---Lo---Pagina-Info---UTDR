@@ -80,7 +80,32 @@ function App() {
                 <a href="https://tenor.com/view/funny-dance-undertale-sans-gif-26048955">Funny Dance GIF</a>
                 from <a href="https://tenor.com/search/funny-gifs">Funny GIFs</a>
               </div>
+              <div className="tenor-gif-embed gif-3" 
+              data-postid="8147392428286254944" 
+              data-share-method="host" 
+              data-aspect-ratio="0.204082" 
+              data-width="100%">
+              <a href="https://tenor.com/zh-TW/view/frisk-undertale-gif-8147392428286254944">Frisk GIF</a> 
+              from <a href="https://tenor.com/search/undertale-gifs">Undertale GIFs</a>
+            </div>
 
+            <div className="tenor-gif-embed gif-4" 
+                data-postid="18592333" 
+                data-share-method="host" 
+                data-aspect-ratio="0.204082" 
+                data-width="100%">
+              <a href="https://tenor.com/zh-TW/view/hoi-temmie-undertale-spin-gif-18592333">Temmie GIF</a> 
+              from <a href="https://tenor.com/search/undertale-gifs">Undertale GIFs</a>
+            </div>
+
+            <div className="tenor-gif-embed gif-5" 
+                data-postid="26135356" 
+                data-share-method="host" 
+                data-aspect-ratio="0.204082" 
+                data-width="100%">
+              <a href="https://tenor.com/zh-TW/view/chara-undertale-gif-26135356">Chara GIF</a> 
+              from <a href="https://tenor.com/search/undertale-gifs">Undertale GIFs</a>
+            </div>
 
             </div>
         </div>
