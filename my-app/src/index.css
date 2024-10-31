@@ -343,26 +343,49 @@ dr-background {
   -webkit-background-clip: text !important;
   -moz-background-clip: text !important;
   background-clip: text !important;
-  color: transparent ;
+  color: transparent;
   width: 310px;
 }
 
 .tenor-gif-embed {
   width: 100%; 
-  max-width: 9%;
-  height: 500px;
+  max-width: 11%;
+  height: auto;
+  
+
 }
 
 .gif-1 {
   position: fixed; /* Posición fija respecto a la ventana */
-          top: -1220px;
-          left: 600px;
-          
+          top: -800px;
+          left: -10px;
+          float: right;
+
 }
 
 .gif-2 {
   position: fixed; /* Posición fija respecto a la ventana */
-          top: -1720px;
-          left: 240px;
+          top: -990px;
+          float: left;
 }
+
+.gif-3 {
+  position: fixed; /* Posición fija respecto a la ventana */
+          top: -600px;
+          left: -150px;
+          float: left;
+}
+.gif-4 {
+  position: fixed; /* Posición fija respecto a la ventana */
+          top: -800px;
+          left: -300px;
+          float: left;
+}
+.gif-5 {
+  position: fixed; /* Posición fija respecto a la ventana */
+          top: -1000px;
+          left: -450px;
+          float: left;
+}
+
 
