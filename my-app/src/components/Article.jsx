@@ -86,9 +86,13 @@ function Article() {
   console.log(content);
   const content1 = {
     title: "TITULO",
+    image1: "",
     text1: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+    image2: "",
     text2: "Nulla facilisis eleifend integer penatibus primis aliquet ante sem ornare. Velit nunc etiam platea cursus velit magnis. Quis platea dictum porttitor hendrerit non libero aenean iaculis inceptos? Ullamcorper porttitor tellus quam sem sit pellentesque vestibulum. Dui iaculis ex eros, facilisi natoque malesuada placerat. Vitae faucibus odio feugiat suspendisse; porta natoque fringilla. Molestie tempor lacinia tincidunt scelerisque dui est. Suscipit tellus vestibulum cursus fusce curae nibh.",
+    image3: "",
     text3: "Tortor himenaeos velit nunc tortor neque. Nisl finibus tortor accumsan dis massa; etiam viverra rhoncus habitant? Primis dictum nulla ipsum, curae sed nam. Urna quisque litora urna tristique egestas, est libero iaculis. Lacus ante etiam phasellus ex montes bibendum donec tellus. Nostra montes ad pretium mi est vel cras. Sodales vitae convallis lobortis dapibus praesent metus sed vitae. Pretium adipiscing consectetur integer fusce, tincidunt nisl vitae. Scelerisque porta adipiscing enim sagittis diam lectus.",
+    image4: "",
     text4: "Id ut feugiat hac velit congue accumsan lectus torquent. Dignissim elit id molestie consectetur parturient nam. Nascetur cursus nisi quisque volutpat semper primis. Aptent faucibus fringilla ligula senectus ultrices primis enim. Dolor massa et porttitor class proin donec in. Odio neque natoque sit; quam cubilia proin vestibulum. Facilisi ligula eleifend tincidunt cubilia posuere efficitur per. Eros efficitur ut aptent feugiat phasellus?",
   }
   return (
