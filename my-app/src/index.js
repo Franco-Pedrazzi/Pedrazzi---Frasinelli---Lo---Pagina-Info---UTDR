@@ -10,13 +10,20 @@ import IndexDeltarune from './components/IndexDeltarune.jsx';
 import Category from './components/Category.jsx';
 import Article from './components/Article.jsx';
 import Footer from './components/Footer.jsx';
+import Historia from './components/undertale/Historia.jsx'
+import Curiosidades from './components/undertale/Curiosidades.jsx';
+
 const root = createRoot(document.getElementById("root"));
 root.render(
     <BrowserRouter>
         <Routes>
             <Route path="/" element={<App />} />
+
             <Route path="/Undertale" element={<IndexUndertale />} />
             <Route path="/Undertale/:categoria" element={<IndexUndertale />} />
+            <Route path="/Undertale/Historia" element={<Historia />} />
+            <Route path="/Undertale/Curiosidades" element={<Curiosidades />} />
+
             <Route path="/Undertale/:categoria/:articulo" element={<IndexUndertale />} />
 
             <Route path="/Deltarune" element={<IndexDeltarune />} />
