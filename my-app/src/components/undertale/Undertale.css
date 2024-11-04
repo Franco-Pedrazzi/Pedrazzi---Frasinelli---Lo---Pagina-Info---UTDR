@@ -1,4 +1,64 @@
 .change_Ruote{
     position: fixed;
     left: 95%;
+    width: 75px;
+    height: 37px;
+    border: 8px solid transparent;
+    border-color: rgb(255, 255, 255);
+    background-color: black;
 }
+.Neutral_Pasifista{
+    position: relative;
+    left: -20%;
+    background-color: white;
+    width: 26px;
+    height: 21px;
+    border: 8px solid transparent;
+    border-color: rgb(0, 0, 0);
+
+}
+.Genocida{
+    position: relative;
+    left: -20%;
+    background-color: rgb(255, 0, 0);
+    width: 26px;
+    height: 21px;
+    border: 8px solid transparent;
+    border-color: rgb(0, 0, 0);
+    color: red;
+    transform: translateX(80%);
+}
+.Frames{
+    width: 50%;
+    height: 50%;
+}
+.miniFrames{
+    width: 33%;
+    height: 33%; 
+}
+.gif-container {
+    width: 150px;
+    height: 200px; 
+    overflow: hidden;
+  }
+  
+  .gif-container img {
+    position: relative;
+    width: 100%; 
+    top:-10%;
+    height: auto;
+  }
+  .gif-container_genocide {
+    width: 25%;
+    height: 12%; 
+    overflow: hidden;
+  }
+  
+  .gif-container_genocide img {
+    position: relative;
+    width: 200% !important;
+    height: 200% !important; 
+    left: -20%;
+    top: 50% !important;
+
+  }

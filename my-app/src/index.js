@@ -11,8 +11,8 @@ import Category from './components/Category.jsx';
 import Article from './components/Article.jsx';
 import Footer from './components/Footer.jsx';
 import Historia from './components/undertale/Historia.jsx'
-import Curiosidades from './components/undertale/Curiosidades.jsx';
-
+import Personages from './components/undertale/Personages.jsx';
+import Obgetos from './components/undertale/Obgetos.jsx';
 const root = createRoot(document.getElementById("root"));
 root.render(
     <BrowserRouter>
@@ -22,7 +22,8 @@ root.render(
             <Route path="/Undertale" element={<IndexUndertale />} />
             <Route path="/Undertale/:categoria" element={<IndexUndertale />} />
             <Route path="/Undertale/Historia" element={<Historia />} />
-            <Route path="/Undertale/Curiosidades" element={<Curiosidades />} />
+            <Route path="/Undertale/Personages" element={<Personages />} />
+            <Route path="/Undertale/Obgetos" element={<Obgetos />} />
 
             <Route path="/Undertale/:categoria/:articulo" element={<IndexUndertale />} />
 

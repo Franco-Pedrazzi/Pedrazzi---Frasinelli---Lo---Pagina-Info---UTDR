@@ -130,7 +130,8 @@ Link:hover,
 .Especial_button:hover,
 .button_text:hover,
 .button-img:hover,
-.button:hover {
+.button:hover,
+.change_Ruote {
   color: #ffff00 !important;
   cursor: url("./files/Images/detemination\ soul\ alert.png"), pointer;
 }
