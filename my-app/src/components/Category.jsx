@@ -12,7 +12,7 @@ import TitleLogo from "../files/Images/deltarune-title-logo.png";
 function Category() {
 
   const url = useParams().categoria;
-  const [articles, setArticles] = useState(null);
+  const [articles, setArticles] = useState([]);
 
   useEffect(() => {
     async function fetchData() {
@@ -53,36 +53,36 @@ function Category() {
       <DRButtons />
       <body id="deltarune" style={{ background: "transparent" }}>
 
-      <header style={{ overflow: "hidden"}}>
+        <header style={{ overflow: "hidden" }}>
           <center>
-            <img src={TitleLogo} style={{ width: "100%", maxWidth: "700px", marginBottom: "20px", marginTop: "20px"  }} className="logo" />
+            <img src={TitleLogo} style={{ width: "100%", maxWidth: "700px", marginBottom: "20px", marginTop: "20px" }} className="logo" />
           </center>
         </header>
-
-        {articles == null ? (<center>
-          <h3>Pero no vino nadie.</h3>
-        </center>)
-          :
-          (<main style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
-            <center>
-              <section style={{ width: "100%", maxWidth: "700px" }}>
-                <h1 className="title">{url.toUpperCase()}</h1>
-                <ul style={{ listStyleType: "none", padding: "0", listStyle: "none", display: "block" }}>
-                  <hr />
-                  {articles.map(article => (<>
-                    <li style={{ margin: "20px" }}>
-                      <Link to={`http://localhost:3000/Deltarune/${url}/${article.name.replace(/ /g, '')}`}>
-                        <h4 style={{ fontSize: "100%", margin: "0px" }}>{article.name}</h4>
-                        <p style={{ fontSize: "18px", textShadow: "none", margin: "0px" }}>{article.miniDesc}</p>
-                      </Link>
-                    </li>
-                    <hr />
-                  </>))}
-                </ul>
-                <Link to={`http://localhost:3000/Deltarune`}><h3 style={{ fontSize: "200%" }}>VOLVER</h3></Link>
-              </section>
-            </center>
-          </main>)}
+        <main style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
+          <center>
+            <section style={{ width: "100%", maxWidth: "700px" }}>
+              {articles == null ? (<><h3>Pero no vino nadie.</h3><hr /></>)
+                : (
+                  <>
+                    <h1 className="title">{url.toUpperCase()}</h1>
+                    <ul style={{ listStyleType: "none", padding: "0", listStyle: "none", display: "block" }}>
+                      <hr />
+                      {articles.map(article => (<>
+                        <li style={{ margin: "20px" }}>
+                          <Link to={`http://localhost:3000/Deltarune/${url}/${article.name.replace(/ /g, '_')}`}>
+                            <h4 style={{ fontSize: "100%", margin: "0px" }}>{article.name}</h4>
+                            <p style={{ fontSize: "18px", textShadow: "none", margin: "0px" }}>{article.miniDesc}</p>
+                          </Link>
+                        </li>
+                        <hr />
+                      </>))}
+                    </ul>
+                  </>
+                )}
+              <Link to={`http://localhost:3000/Deltarune`}><h3 style={{ fontSize: "200%" }}>VOLVER</h3></Link>
+            </section>
+          </center>
+        </main>
       </body>
     </>
   );
