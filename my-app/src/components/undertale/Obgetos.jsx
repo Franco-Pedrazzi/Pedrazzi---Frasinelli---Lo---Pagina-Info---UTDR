@@ -28,7 +28,7 @@ const imagenes = images.keys().reduce((acc, image) => {
 function Obgetos() {
   const [docData, setDocData] = useState(null);
   const [introduccion, setIntroduccion] = useState(false);
-  
+
   return (
     <div>
       <nav>
