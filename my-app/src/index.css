@@ -40,11 +40,13 @@
   background: #333;
 }
 
-
 * {
   cursor: url("./files/Images/detemination\ soul.png"), default;
 }
 
+img {
+  image-rendering: pixelated;
+}
 
 determinacion,
 genocida {
@@ -114,15 +116,22 @@ h2 {
   font-size: 200%;
 }
 
+a,
+Link {
+  color: inherit;
+  text-decoration: none;
+}
 
 a:hover,
 button:hover,
 input:hover,
+Link:hover,
 .Especial_button:hover,
 .button_text:hover,
 .button-img:hover,
-.button:hover {
-  color: #ffff00;
+.button:hover,
+.change_Ruote {
+  color: #ffff00 !important;
   cursor: url("./files/Images/detemination\ soul\ alert.png"), pointer;
 }
 
@@ -240,6 +249,22 @@ footer a {
   font-size: x-large;
 }
 
+.multicolortext {
+  background-image: linear-gradient(to left, violet, rgb(163, 84, 219),rgb(64, 171, 233), rgb(64, 64, 233), rgb(38, 146, 38), lightgreen, yellow, orange, red)!important;
+  -webkit-background-clip: text !important;
+  -moz-background-clip: text !important;
+  background-clip: text !important;
+  color: transparent ;
+  width: 310px;
+}
+
+.tenor-gif-embed {
+  position: relative;
+  float: right;
+  top: -1200px;
+  max-width: 9%;
+  height: 500px;
+}
 
 /*Css exclusivo de Deltarune*/
 
@@ -260,9 +285,7 @@ dr-background {
 
 
 #deltarune {
-  cursor: url("./files/Images/heart.png"), default !important;
-
-
+  cursor: url("./files/Images/cursorDrMain.png"), auto !important;
 }
 
 
@@ -275,7 +298,7 @@ dr-background {
 }
 
 
-#deltarune section p {
+#deltarune p {
   font-family: '8 Bit Operator';
   text-shadow: 2px 2px #0f0f71;
 }
@@ -286,6 +309,16 @@ dr-background {
   font-size: 250%;
 }
 
+#deltarune h1,
+#deltarune h2,
+#deltarune h3,
+#deltarune h4,
+#deltarune h5,
+#deltarune h6,
+#deltarune span {
+  font-family: "8bitoperator JVE";
+  font-weight: normal;
+}
 
 #deltarune .title {
   margin: 5px;
@@ -297,10 +330,13 @@ dr-background {
 
 #deltarune img {
   image-rendering: pixelated;
-  margin: 5px;
-  width: 500px;
 }
 
+#deltarune hr {
+  margin: 1.5% 0;
+  opacity: 0.2;
+  display: block;
+}
 
 .multicolortext {
   background-image: linear-gradient(to left, violet, rgb(163, 84, 219),rgb(64, 171, 233), rgb(64, 64, 233), rgb(38, 146, 38), lightgreen, yellow, orange, red)!important;

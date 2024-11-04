@@ -1,59 +1,104 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+
+import { initializeApp } from "firebase/app";
+import { getFirestore, doc, getDoc, setDoc } from "firebase/firestore"; // Importa Firestore
+import { db } from "../DataBase";
 
 import TitleLogo from "../files/Images/deltarune-title-logo.png";
 import CyberCity from "../files/Images/cyber_city.gif";
-import ChapterIcon from "../files/Images/ch3_icon.png"
+import ChapterIcon from "../files/Images/ch3_icon.png";
+import MenuSound from "../files/snd_menumove.mp3";
+
+import DRButtons from "./DRButtons";
 
 function IndexDeltarune() {
+  const [docInfo, setDocInfo] = useState(null);
+  const [content, setContent] = useState({image1: ""});
+  const [chapters, setChapters] = useState([]);
 
-  const [chapters, setChapters] = useState([
-    { index: 1, name: "Personajes", image: ChapterIcon }
-  ])
+  useEffect(() => {
+    async function fetchData() {
+      try {
+        const docRef = doc(db, "Deltarune", "Informacion");
+        const docSnap = await getDoc(docRef);
+        if (docSnap.exists()) {
+          setChapters(docSnap.data().categories);
+          setContent(docSnap.data().content);
+          setDocInfo(docSnap.data())
+        } else {
+          console.log("No se encontró el documento");
+        }
+      } catch (error) {
+        console.error("Error al obtener el documento:", error);
+      }
+    }
+    
+    fetchData();
+  }, []);
 
   return (
-    <body id="deltarune" style={{ backgroundColor: "transparent" }}>
+    <>
+      <DRButtons />
+      <body id="deltarune" style={{ background: "transparent" }}>
 
-      <header>
-        <center>
-          <img src={TitleLogo} style={{ maxWidth: "700px", margin: "20px" }} className="logo" />
-        </center>
-      </header>
+        <header>
+          <center>
+            <img src={TitleLogo} style={{ maxWidth: "700px", marginBottom: "20px", marginTop: "20px" }} className="logo" />
+          </center>
+        </header>
 
-      <main>
-        <center>
+        <main style={{ justifyContent: "space-between" }}>
+          <center>
 
-          <section style={{ maxWidth: "600px", border: "4px solid rgb(0, 192, 0)" }}>
-            <center >
-              <img src={CyberCity} />
-              <h1 className="title">¿QUE ES?</h1>
-              <p>Deltarune es un videojuego de rol creado por Toby Fox, creador de Undertale. El Capítulo 1 fue lanzado el 31 de octubre de 2018 y el Capítulo 2 fue lanzado el 17 de septiembre de 2021. Comparte varias mecánicas con Undertale, como el uso del Tablero de balas en batalla y la posibilidad de terminar una batalla pacíficamente. Sin embargo, el videojuego rompe la cuarta pared tratando de negar al jugador la posibilidad de obtener un final distino por sus acciones. En su mayoría.
-              </p>
-            </center>
-          </section>
+            <section style={{ maxWidth: "600px", border: "4px solid rgb(0, 192, 0)" }}>
+              <center>
+                <img src={content.image1} style={{ width: "500px", margin: "10px", border: "3px solid rgb(0, 192, 0)" }} />
+                <h1 className="title">{content.title}</h1>
+                <p>{content.text1}</p>
+              </center>
+            </section>
 
-          <section style={{ maxWidth: "800px", border: "4px solid rgb(255, 255, 255)" }}>
-            <center>
-              <h1 className="title" style={{ fontSize: "50px" }}>SELECCIONA EL CAPITULO</h1>
+            <section style={{ maxWidth: "1000px", border: "4px solid rgb(255, 255, 255)", padding: "20px", minWidth: "600px" }}>
+              <center>
+                <h1 className="title" style={{ fontSize: "50px" }}>SELECCIONA EL CAPITULO</h1>
 
-              {chapters.map(chapter => (<ul style={{ listStyleType: "none", listStyle: "none", display: "block" }}>
-                <a>
-                  <li style={{ display: "inline", marginRight: "10px", marginLeft: "20px", float: "left" }} >Chapter {chapter.index}</li>
-                  <li style={{ display: "inline", marginRight: "10px", marginLeft: "20px" }} >{chapter.name}</li>
-                  <li style={{ display: "inline", marginRight: "10px", marginLeft: "20px", float: "right" }} >
-                    <img src={chapter.image} style={{ width: "100px" }} />
-                  </li>
-                </a>
-              </ul>))}
+                <div style={{ display: "inline-block", width: "100%" }}>
+                  <ul style={{ listStyleType: "none", padding: "0", listStyle: "none", display: "block" }}>
+                    <hr />
+                    {chapters.map(chapter => (<>
 
-            </center>
-          </section>
+                      <li style={{}} >
 
-        </center>
-      </main>
+                        <Link to={`http://localhost:3000/Deltarune/${chapter.name}`}
+                          style={{ display: "flex", lineHeight: "70px", alignItems: "center", justifyContent: "space-between", textAlign: "-webkit-match-parent" }}
+                          onMouseEnter={(e) => { e.currentTarget.children[2].style.WebkitFilter = "sepia(175%) saturate(99999999%) " }}
+                          onMouseLeave={(e) => { e.currentTarget.children[2].style.WebkitFilter = "none" }}
+                        >
 
-      <dr-background />
+                          <span style={{ display: "inline-block" }} >Chapter {chapter.index}</span>
+                          <span style={{ display: "inline-block" }} >{chapter.name}</span>
+                          <img src={chapter.image} style={{ width: "80px", display: "block" }} />
 
-    </body>
+                        </Link>
+
+                      </li>
+                      <hr />
+                    </>
+                    ))}
+                  </ul>
+                </div>
+
+              </center>
+            </section>
+
+          </center>
+        </main>
+
+        <dr-background />
+
+      </body>
+    </>
   );
 }
 
