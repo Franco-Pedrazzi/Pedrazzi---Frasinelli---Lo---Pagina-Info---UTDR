@@ -29,22 +29,6 @@ function Category() {
         setArticles(null);
       }
     }
-    /*async function playSound() {
-      let array = document.getElementsByTagName("a");
-      for (let i = 0; i < array.length; i++) {
-        array[i].addEventListener('mouseenter', () => {
-          try {
-            const sound = new Audio(MenuSound)
-            sound.volume = 0.5;
-            sound.play();
-          }
-          catch (error) {
-            console.log(error);
-          }
-        });
-      }
-    }
-    playSound();  */
     fetchData();
   }, []);
 

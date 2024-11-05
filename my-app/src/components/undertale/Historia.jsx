@@ -14,7 +14,7 @@ import undertale_Item_Logo from '../../files/Images/undertale_item_logo.png'
 import undertale_switch from '../../files/Images/undertale switch.png'
 import { Routes, Route, useParams } from 'react-router-dom';
 import './Undertale.css'
-import Personages from './Personages'
+import Personajes from './Personajes'
 const images = require.context('../../files/Images/undertale_imagenes_historia', false, /\.(png|jpe?g|webp|gif)$/);
 
 const imagenes = images.keys().reduce((acc, image) => {
@@ -62,13 +62,13 @@ function Mundo() {
             <img src={Undertale_logo} className='button-img' />
             <p className='button_text'>Undertale</p>
           </Link >
-          <Link to="http://localhost:3000/Undertale/obgetos" className='Especial_button' style={{ display: "flex", paddingRight: "45px" }}>
+          <Link to="http://localhost:3000/Undertale/Objetos" className='Especial_button' style={{ display: "flex", paddingRight: "45px" }}>
             <img src={undertale_Item_Logo} style={{ width: "50px", height: "50px" }} className='button-img' />
-            <p className='button_text'>obgetos</p>
+            <p className='button_text'>Objetos</p>
           </Link >
-          <Link  to="http://localhost:3000/Undertale/Personages" className='Especial_button' style={{ display: "flex", paddingRight: "45px"  }}>
+          <Link  to="http://localhost:3000/Undertale/Personajes" className='Especial_button' style={{ display: "flex", paddingRight: "45px"  }}>
           <img src={save_point} className='button-img' style={{width: "50px",height: "50px"}}/>
-          <p className='button_text'>Personages</p>
+          <p className='button_text'>Personajes</p>
         </Link >
         </nav>
 

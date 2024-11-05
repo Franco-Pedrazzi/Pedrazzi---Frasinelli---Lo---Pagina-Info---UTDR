@@ -285,9 +285,13 @@ dr-background {
 }
 
 
+<<<<<<< HEAD
 #deltarune {
   cursor: url("./files/Images/cursorDrMain.png"), auto !important;
 }
+=======
+#deltarune {}
+>>>>>>> 0b04e68efe056a09e40aefce90b8405253d42e86
 
 
 #deltarune section {
@@ -340,53 +344,10 @@ dr-background {
 }
 
 .multicolortext {
-  background-image: linear-gradient(to left, violet, rgb(163, 84, 219),rgb(64, 171, 233), rgb(64, 64, 233), rgb(38, 146, 38), lightgreen, yellow, orange, red)!important;
+  background-image: linear-gradient(to left, violet, rgb(163, 84, 219), rgb(64, 171, 233), rgb(64, 64, 233), rgb(38, 146, 38), lightgreen, yellow, orange, red) !important;
   -webkit-background-clip: text !important;
   -moz-background-clip: text !important;
   background-clip: text !important;
   color: transparent;
   width: 310px;
 }
-
-.tenor-gif-embed {
-  width: 100%; 
-  max-width: 11%;
-  height: auto;
-  
-
-}
-
-.gif-1 {
-  position: fixed; /* Posición fija respecto a la ventana */
-          top: -800px;
-          left: -10px;
-          float: right;
-
-}
-
-.gif-2 {
-  position: fixed; /* Posición fija respecto a la ventana */
-          top: -990px;
-          float: left;
-}
-
-.gif-3 {
-  position: fixed; /* Posición fija respecto a la ventana */
-          top: -600px;
-          left: -150px;
-          float: left;
-}
-.gif-4 {
-  position: fixed; /* Posición fija respecto a la ventana */
-          top: -800px;
-          left: -300px;
-          float: left;
-}
-.gif-5 {
-  position: fixed; /* Posición fija respecto a la ventana */
-          top: -1000px;
-          left: -450px;
-          float: left;
-}
-
-

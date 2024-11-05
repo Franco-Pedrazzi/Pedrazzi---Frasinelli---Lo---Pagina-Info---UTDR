@@ -17,7 +17,7 @@ import undertale_Map_Logo from '../files/Images/map_icon.png'
 import save_point from '../files/Images/save point.png'
 import {useNavigate} from "react-router-dom";
 import Mundo from './undertale/Historia.jsx'
-import Personages from './undertale/Personages.jsx';
+import Personajes from './undertale/Personajes.jsx';
 
 function IndexUndertale() {
   const [docData, setDocData] = useState(null);
@@ -43,13 +43,13 @@ function IndexUndertale() {
         <p className='button_text' style={{fontSizeAdjust:"50px"}}>H</p>
           <p className='button_text'>Historia</p>
         </Link >
-        <Link  to="http://localhost:3000/Undertale/obgetos" className='Especial_button' style={{ display: "flex", paddingRight: "45px" }}>
+        <Link  to="http://localhost:3000/Undertale/Objetos" className='Especial_button' style={{ display: "flex", paddingRight: "45px" }}>
           <img src={undertale_Item_Logo}style={{width: "50px",height: "50px"}} className='button-img'/>
-          <p className='button_text'>obgetos</p>
+          <p className='button_text'>Objetos</p>
         </Link >
-        <Link  to="http://localhost:3000/Undertale/Personages" className='Especial_button' style={{ display: "flex", paddingRight: "45px"  }}>
+        <Link  to="http://localhost:3000/Undertale/Personajes" className='Especial_button' style={{ display: "flex", paddingRight: "45px"  }}>
           <img src={save_point} className='button-img' style={{width: "50px",height: "50px"}}/>
-          <p className='button_text'>Personages</p>
+          <p className='button_text'>Personajes</p>
         </Link >
         </nav>
       <center>
