@@ -570,7 +570,8 @@ function Mundo() {
             <img src={imagenes["Chara"]} className='monsters' />
             <h3>que nos obligará hacer un trato con ella, ella nos dejara el mundo como estaba pero a cambio quiere nuestra alma y todo se recetea</h3>
             <img src={imagenes["chara_angry"]} className='monsters' />
-            <h3>y ahora podemos hacer la Neutra y la Pasifista</h3>
+            <h3><determinacion>Y ella destruye el mundo para que podamos regresar al comienzo y tener un mejor final</determinacion></h3>
+            <h3><justicia>(para entender leer el otro modo)</justicia></h3>
           </div>
         ) : (
           <div>
