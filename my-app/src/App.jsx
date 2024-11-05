@@ -67,11 +67,11 @@ function App() {
               la canción <span class="multicolortext">Battle Tower</span>, para <span class="multicolortext">Little Town Hero</span> algunas de las pistas más destacadas del juego y
               para <span class="multicolortext">OMORI</span> contribuyó con una pista musical para el juego, etc.
             </h3>
-            <img src={sans} style={{ position: 'absolute', top: '120px', height: "200px", display: "block", marginRight: "auto"}}  ></img>
-            <img src={dog} style={{ position: 'absolute', top: '1000px', height: "1000px", display: "block", marginLeft: "auto"}} ></img>
-            <img src={temmie} style={{ position: 'absolute', top: '1000px', height: "200px", display: "block", marginRight: "auto"}}  ></img>
-            <img src={frisk} style={{ position: 'absolute', top: '1000px',height: "200px", display: "block", marginRight: "auto"}} ></img>
-            <img src={kris} style={{ position: 'absolute', top: '1000px', height: "200px", display: "block", marginRight: "auto"}} ></img>
+            <img src={sans} style={{ position: 'absolute', top: '100px', height: "200px", display: "block"}}  ></img>
+            <img src={dog} style={{ position: 'absolute', top: '80px', height: "1000px", display: "block", right: '0px'}} ></img>
+            <img src={temmie} style={{ position: 'absolute', top: '380px', height: "200px", display: "block"}}  ></img>
+            <img src={frisk} style={{ position: 'absolute', top: '620px',height: "200px", display: "block"}} ></img>
+            <img src={kris} style={{ position: 'absolute', top: '870px', height: "200px", display: "block"}} ></img>
           </div>
         </div>
       </center>
