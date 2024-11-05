@@ -61,11 +61,11 @@ const characters = [
   { name: "Final Froggit", image: imagenes["Final_Froggit"] },
   { name: "Whimsalot", image: imagenes["Whimsalot"] },
   { name: "Astigmatism", image: imagenes["Astigmatism"] },
-  { name: "Amalgama 1", image: imagenes["amalgama_1"] },
-  { name: "Amalgama 2", image: imagenes["amalgama_2"] },
-  { name: "Amalgama 3", image: imagenes["amalgama_3"] },
-  { name: "Amalgama 4", image: imagenes["amalgama_4"] },
-  { name: "Amalgama 5", image: imagenes["amalgama_5"] },
+  { name: "MemoryHead", image: imagenes["amalgama_1"] },
+  { name: "Snowdrake's Mother", image: imagenes["amalgama_2"] },
+  { name: "Reaper Bird", image: imagenes["amalgama_3"] },
+  { name: "Lemon Bread", image: imagenes["amalgama_4"] },
+  { name: "Endogeny", image: imagenes["amalgama_5"] },
 ];
 function Personajes() {
   const [docData, setDocData] = useState(null);

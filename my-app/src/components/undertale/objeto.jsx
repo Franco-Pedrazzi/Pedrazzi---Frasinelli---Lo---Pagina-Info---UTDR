@@ -32,35 +32,32 @@ function Objeto() {
                 const docSnap = await getDoc(docRef);
                 if (docSnap.exists()) {
                     const data = docSnap.data();
-                    // Verificamos si la categoría existe y es un arreglo
                     if (Array.isArray(data[categoria])) {
-                        // Buscamos el objeto en la categoría especificada
                         const objeto = data[categoria].find(obj => {
-                            const objNombre = obj.nombre.toLowerCase().replace(/ /g, '_'); // Normalizamos el nombre
-                            return objNombre === articulo.toLowerCase(); // Comparamos con el artículo
+                            const objNombre = obj.nombre.toLowerCase().replace(/ /g, '_'); 
+                            return objNombre === articulo.toLowerCase(); 
                         });
 
                         if (objeto) {
-                            setData(objeto); // Si encontramos el objeto, lo establecemos
+                            setData(objeto);
                         } else {
                             setError(`No se encontró el objeto: ${articulo}`);
                         }
                     } else {
-                        setError(`La propiedad '${categoria}' no es un arreglo o no existe`);
+                        setError(`La propiedad '${categoria}' tiene un error`);
                     }
                 } else {
                     setError("No se encontró el documento");
                 }
             } catch (err) {
                 console.error("Error al obtener el documento:", err);
-                setError("Error al obtener el documento. Inténtalo de nuevo más tarde.");
+                setError("Error");
             } finally {
                 setLoading(false);
             }
         }
         fetchData();
-    }, [articulo, categoria]); // Añadido 'categoria' como dependencia
-
+    }, [articulo, categoria]);
     return (
         <div>
             <nav>

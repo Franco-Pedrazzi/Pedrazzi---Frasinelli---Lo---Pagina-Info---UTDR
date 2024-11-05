@@ -26,15 +26,16 @@ const imagenes = images.keys().reduce((acc, image) => {
 
 function Personaje() {
     const [data, setData] = useState(null);
-    const url = useParams().articulo;
+    const url = useParams().articulo.replace('_', ' ');
 
+console.log(url)
     useEffect(() => {
         async function fetchData() {
             try {
                 const docRef = doc(db, "Undertale", "Personajes");
                 const docSnap = await getDoc(docRef);
                 if (docSnap.exists()) {
-                    const personaje = docSnap.data().characters.find(obj => obj.name.toLowerCase() === url.toLowerCase());
+                    const personaje = docSnap.data().personajes.find(obj => obj.name.toLowerCase() === url.toLowerCase());
                     if (personaje) {
                         setData(personaje);
                     } else {
@@ -83,7 +84,8 @@ function Personaje() {
                 {data && (
                     <div style={{ maxWidth: "600px", border: "4px solid rgb(255, 255, 255)", marginTop: "20px" }}>
                         <h2 className="title">"{data.name}"</h2>
-                        <img src={data.image} alt={data.name} />
+                        <img src={data.image}  style={{maxWidth:"100%"}}/>
+                        <h3>HP {data.stats.hp}/{data.stats.hp}</h3>
                         <h3>AT {data.stats.attack}</h3>
                         <h3>DF {data.stats.defense}</h3>
                         <h3>{data.description}</h3>

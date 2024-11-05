@@ -1,6 +1,6 @@
 .change_Ruote{
     position: fixed;
-    left: 95%;
+    left: 83%;
     width: 75px;
     height: 37px;
     border: 8px solid transparent;
@@ -62,3 +62,6 @@
     top: 50% !important;
 
   }
+img{
+  max-width: 100%;
+}
