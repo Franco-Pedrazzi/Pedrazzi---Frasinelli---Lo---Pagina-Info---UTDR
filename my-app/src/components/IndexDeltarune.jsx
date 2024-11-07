@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import "../index.css"
 
 import { initializeApp } from "firebase/app";
 import { getFirestore, doc, getDoc, setDoc } from "firebase/firestore"; // Importa Firestore
@@ -14,7 +15,7 @@ import DRButtons from "./DRButtons";
 
 function IndexDeltarune() {
   const [docInfo, setDocInfo] = useState(null);
-  const [content, setContent] = useState({image1: ""});
+  const [content, setContent] = useState({ image1: "" });
   const [chapters, setChapters] = useState([]);
 
   useEffect(() => {
@@ -33,7 +34,7 @@ function IndexDeltarune() {
         console.error("Error al obtener el documento:", error);
       }
     }
-    
+
     fetchData();
   }, []);
 
@@ -51,7 +52,7 @@ function IndexDeltarune() {
         <main style={{ justifyContent: "space-between" }}>
           <center>
 
-            <section style={{ maxWidth: "600px", border: "4px solid rgb(0, 192, 0)" }}>
+            <section style={{ maxWidth: "600px", border: "4px solid rgb(0, 192, 0)", background: "black", display: "inline-block", verticalAlign: "middle", marginLeft: "10px", marginRight: "10px" }}>
               <center>
                 <img src={content.image1} style={{ width: "500px", margin: "10px", border: "3px solid rgb(0, 192, 0)" }} />
                 <h1 className="title">{content.title}</h1>
@@ -59,7 +60,7 @@ function IndexDeltarune() {
               </center>
             </section>
 
-            <section style={{ maxWidth: "1000px", border: "4px solid rgb(255, 255, 255)", padding: "20px", minWidth: "600px" }}>
+            <section style={{ background: "black", maxWidth: "1000px", border: "4px solid rgb(255, 255, 255)", padding: "20px", minWidth: "700px", display: "inline-block", verticalAlign: "middle", marginLeft: "10px", marginRight: "10px" }}>
               <center>
                 <h1 className="title" style={{ fontSize: "50px" }}>SELECCIONA EL CAPITULO</h1>
 
